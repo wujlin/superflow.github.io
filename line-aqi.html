@@ -9,8 +9,8 @@
 <body style="height: 100%; margin: 0">
   <div id="container" style="height: 100%"></div>
 
-  <script type="text/javascript" src="asset/js/jquery"></script>
-  <script type="text/javascript" src="asset/js/echarts.min.js"></script>
+  <script type="text/javascript" src="assets/js/jquery"></script>
+  <script type="text/javascript" src="assets/js/echarts.min.js"></script>
   <!-- Uncomment this line if you want to dataTool extension
   <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.4.3/dist/extension/dataTool.min.js"></script>
   -->
@@ -39,7 +39,7 @@
     // var ROOT_PATH = 'https://echarts.apache.org/examples';
     var option;
 
-    $.get('asset/data/example.json', function (data) {
+    $.get('assets/data/example.json', function (data) {
   myChart.setOption(
     (option = {
       title: {

@@ -43,7 +43,7 @@
   myChart.setOption(
     (option = {
       title: {
-        text: 'Beijing AQI',
+        text: '淄博日均迁入指数',
         left: '1%'
       },
       tooltip: {
@@ -72,7 +72,7 @@
       },
       dataZoom: [
         {
-          startValue: '2014-06-01'
+          startValue: '2023-02-28'
         },
         {
           type: 'inside'
@@ -117,7 +117,7 @@
         }
       },
       series: {
-        name: 'Beijing AQI',
+        name: 'mobility',
         type: 'line',
         data: data.map(function (item) {
           return item[1];
@@ -129,19 +129,19 @@
           },
           data: [
             {
-              yAxis: 50
-            },
-            {
               yAxis: 100
-            },
-            {
-              yAxis: 150
             },
             {
               yAxis: 200
             },
             {
               yAxis: 300
+            },
+            {
+              yAxis: 400
+            },
+            {
+              yAxis: 500
             }
           ]
         }

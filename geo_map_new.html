@@ -23,7 +23,8 @@
     var option;
 
     $.getJSON('assets/style/style_map.json', function(styleJson){
-        var option = {
+        myChart.setOption(
+    (option = {
             bmap: {
                 center:[118.118600, 24.528422],
                 zoom: 12,
@@ -42,10 +43,10 @@
             series: [{
 
             }],
-        };
-        myChart.setOption(option, true);
-    })
-
+        }
+    ))
+    });
+    myChart.setOption(option);
 
 </script>
 

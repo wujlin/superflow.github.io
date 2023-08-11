@@ -9,44 +9,52 @@
   <script type="text/javascript" src="assets/js/jquery.min.js"></script>
   <script type="text/javascript" src="assets/js/echarts.min.js"></script>
   <script type="text/javascript" src="assets/js/bmap.min.js"></script>
-<!--   <script src="https://api.map.baidu.com/getscript?v=3.0&ak=tPA1cGOVaeG90GchORU0QoRgr6DRqntV&services=&t=20230808155339"></script> -->
-  <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=3.0&ak=KOmVjPVUAey1G2E8zNhPiuQ6QiEmAwZu&services=&t=20230808155339"></script>
-  
+  <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=3.0&ak=kf2UKaU6pnjgpi8a1A8PA9vXwVoGxTOX"></script>
+
   <script type="text/javascript">
-    var dom = document.getElementById('container');
-    var myChart = echarts.init(dom, null, {
-      renderer: 'canvas',
-      useDirtyRect: false
-    });
-    var app = {};
-    // var ROOT_PATH = 'https://echarts.apache.org/examples';
+    var chartDom = document.getElementById('container');
+    var myChart = echarts.init(chartDom);
     var option;
 
-    $.getJSON('assets/style/style_map.json', function(styleJson){
-        myChart.setOption(
-    (option = {
-            bmap: {
-                center:[118.118600, 24.528422],
-                zoom: 12,
-                roam: true,
-                mapStyle: {
-                    styleJson: styleJson
-                },
-            },
-            title: {
-                text: '厦门市',
-                textStyle: {
-                    color: '#fff'
-                }
-            },
-            legned:{},
-            series: [{
-
-            }],
-        }
-    ))
+    $.get('assets/style/style_map.json', function (style) {
+    $.get('assets/data/hangzhou-tracks.json', function (data) {
+    const lines = data.map(function (track) {
+        return {
+        coords: track.map(function (seg, idx) {
+            return seg.coord;
+        })
+        };
     });
-    myChart.setOption(option);
+    myChart.setOption(
+        (option = {
+        bmap: {
+            center: [120.13066322374, 30.240018034923],
+            zoom: 14,
+            roam: true,
+            mapStyle: {
+                    styleJson: style
+                },
+        },
+        series: [
+            {
+            type: 'lines',
+            coordinateSystem: 'bmap',
+            data: lines,
+            polyline: true,
+            lineStyle: {
+                color: 'purple',
+                opacity: 0.6,
+                width: 1
+            }
+            }
+        ]
+        })
+    );
+    });
+    });
+
+    option && myChart.setOption(option);
+
 
 </script>
 

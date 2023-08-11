@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/echarts.min.js"></script>
+  <script type="text/javascript" src="assets/js/bmap.min.js"></script>
+  <script type="text/javascript" src="https://api.map.baidu.com/getscript?v=3.0&ak=kf2UKaU6pnjgpi8a1A8PA9vXwVoGxTOX"></script>
+
+  <script type="text/javascript">
+    var chartDom = document.getElementById('container');
+    var myChart = echarts.init(chartDom);
+    var option;
+
+    $.get('assets/data/hangzhou-tracks.json', function (data) {
+    const lines = data.map(function (track) {
+        return {
+        coords: track.map(function (seg, idx) {
+            return seg.coord;
+        })
+        };
+    });
+    myChart.setOption(
+        (option = {
+        bmap: {
+            center: [120.13066322374, 30.240018034923],
+            zoom: 14,
+            roam: true,
+            mapStyle: {
+            styleJson: [
+                {
+                featureType: 'water',
+                elementType: 'all',
+                stylers: {
+                    color: '#d1d1d1'
+                }
+                },
+                {
+                featureType: 'land',
+                elementType: 'all',
+                stylers: {
+                    color: '#f3f3f3'
+                }
+                },
+                {
+                featureType: 'railway',
+                elementType: 'all',
+                stylers: {
+                    visibility: 'off'
+                }
+                },
+                {
+                featureType: 'highway',
+                elementType: 'all',
+                stylers: {
+                    color: '#fdfdfd'
+                }
+                },
+                {
+                featureType: 'highway',
+                elementType: 'labels',
+                stylers: {
+                    visibility: 'off'
+                }
+                },
+                {
+                featureType: 'arterial',
+                elementType: 'geometry',
+                stylers: {
+                    color: '#fefefe'
+                }
+                },
+                {
+                featureType: 'arterial',
+                elementType: 'geometry.fill',
+                stylers: {
+                    color: '#fefefe'
+                }
+                },
+                {
+                featureType: 'poi',
+                elementType: 'all',
+                stylers: {
+                    visibility: 'off'
+                }
+                },
+                {
+                featureType: 'green',
+                elementType: 'all',
+                stylers: {
+                    visibility: 'off'
+                }
+                },
+                {
+                featureType: 'subway',
+                elementType: 'all',
+                stylers: {
+                    visibility: 'off'
+                }
+                },
+                {
+                featureType: 'manmade',
+                elementType: 'all',
+                stylers: {
+                    color: '#d1d1d1'
+                }
+                },
+                {
+                featureType: 'local',
+                elementType: 'all',
+                stylers: {
+                    color: '#d1d1d1'
+                }
+                },
+                {
+                featureType: 'arterial',
+                elementType: 'labels',
+                stylers: {
+                    visibility: 'off'
+                }
+                },
+                {
+                featureType: 'boundary',
+                elementType: 'all',
+                stylers: {
+                    color: '#fefefe'
+                }
+                },
+                {
+                featureType: 'building',
+                elementType: 'all',
+                stylers: {
+                    color: '#d1d1d1'
+                }
+                },
+                {
+                featureType: 'label',
+                elementType: 'labels.text.fill',
+                stylers: {
+                    color: '#999999'
+                }
+                }
+            ]
+            }
+        },
+        series: [
+            {
+            type: 'lines',
+            coordinateSystem: 'bmap',
+            data: lines,
+            polyline: true,
+            lineStyle: {
+                color: 'purple',
+                opacity: 0.6,
+                width: 1
+            }
+            }
+        ]
+        })
+    );
+    });
+
+    option && myChart.setOption(option);
+
+
+</script>
+
+</body>
+
+</html>

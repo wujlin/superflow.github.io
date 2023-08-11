@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/echarts.min.js"></script>
-    <script src="assets/style/bmap.js"></script>
+    <script src="assets/js/bmap.js"></script>
     <script src="https://api.map.baidu.com/getscript?v=3.0&ak=KOmVjPVUAey1G2E8zNhPiuQ6QiEmAwZu&services=&t=20230808155339"></script>
 
 </head>
@@ -16,7 +16,7 @@
     <script type="text/javascript">
         var myChart = echarts.init(document.getElementById('main'));
 
-        $.getJSON('style/style_map.json', function(styleJson){
+        $.getJSON('assets/style/style_map.json', function(styleJson){
             var option = {
                 bmap: {
                     center:[118.118600, 24.520422],

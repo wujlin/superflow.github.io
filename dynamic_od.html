@@ -17,7 +17,7 @@
     // 初始化图表时设置style
     var myChart = echarts.init(document.getElementById('main'));
     // 指定图表的配置项和数据
-    $.getJSON('data/data.json', function(data) {
+    $.getJSON('assets/data/data.json', function(data) {
         $.getJSON('assets/style/styleJson_light.json', function(styleJson) {
             var options = []
             var hour = []

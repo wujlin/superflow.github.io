@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <!-- 引入 ECharts 文件 -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/echarts.js"></script>
-    <script src="assets/js/bmap.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/echarts.js"></script>
+    <script src="js/bmap.js"></script>
     <script src="https://api.map.baidu.com/getscript?v=3.0&ak=KOmVjPVUAey1G2E8zNhPiuQ6QiEmAwZu&services=&t=20200327103013"></script>
 </head>
 
@@ -17,8 +17,8 @@
     // 初始化图表时设置style
     var myChart = echarts.init(document.getElementById('main'));
     // 指定图表的配置项和数据
-    $.getJSON('assets/data/data.json', function(data) {
-        $.getJSON('assets/style/styleJson_light.json', function(styleJson) {
+    $.getJSON('data/data.json', function(data) {
+        $.getJSON('styleJson_light.json', function(styleJson) {
             var options = []
             var hour = []
             for (var i = 0; i < data.length; i++) {
@@ -69,29 +69,25 @@
                     width: '8%',
                     axisType: 'category',
                     autoPlay: true,
-                    playInterval: 1000,
+                    playInterval: 500,
                     //rewind: true,
                     currentIndex: 0,
                     inverse: true
                 },
                 bmap: {
                     center: [118.036449, 36.603488],
-                    zoom: 3,
+                    zoom: 6,
                     roam: true,
                     mapStyle: {
                         styleJson: styleJson
                     }
                 },
                 visualMap: {
-                    show: false,
-                    top: 'top',
-                    min: 0,
                     max: 50,
-                    seriesIndex: 0,
-                    calculable: true,
                     inRange: {
-                        color: ['blue', 'blue', 'green', 'yellow', 'red']
-                    }
+                        color: ['green', '#eac736', '#d94e5d'],
+                        colorAlpha: [0, 1]
+                    },
                 },
                 title: {
                     text: "",

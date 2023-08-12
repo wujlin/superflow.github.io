@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <!-- 引入 ECharts 文件 -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/echarts.js"></script>
-    <script src="js/bmap.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/echarts.js"></script>
+    <script src="assets/js/bmap.js"></script>
     <script src="https://api.map.baidu.com/getscript?v=3.0&ak=KOmVjPVUAey1G2E8zNhPiuQ6QiEmAwZu&services=&t=20200327103013"></script>
 </head>
 
@@ -18,7 +18,7 @@
     var myChart = echarts.init(document.getElementById('main'));
     // 指定图表的配置项和数据
     $.getJSON('data/data.json', function(data) {
-        $.getJSON('styleJson_light.json', function(styleJson) {
+        $.getJSON('assets/style/styleJson_light.json', function(styleJson) {
             var options = []
             var hour = []
             for (var i = 0; i < data.length; i++) {

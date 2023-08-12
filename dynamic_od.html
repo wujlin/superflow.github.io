@@ -41,7 +41,7 @@
                         period: 10,
                         constantSpeed: 100,
                         trailLength: 0.7,
-                        symbolSize: 3
+                        symbolSize: 7
                     },
                 }, {
                     type: 'effectScatter',
@@ -54,7 +54,7 @@
                         }
                     },
                     data: data[i][1],
-                    symbolSize: function(params) { return params[2] * 3 }
+                    symbolSize: function(params) { return params[2] * 2 }
                 }]
                 })
             }
@@ -76,14 +76,14 @@
                 },
                 bmap: {
                     center: [118.036449, 36.603488],
-                    zoom: 6,
+                    zoom: 9,
                     roam: true,
                     mapStyle: {
                         styleJson: styleJson
                     }
                 },
                 visualMap: {
-                    max: 50,
+                    max: 40,
                     inRange: {
                         color: ['green', '#eac736', '#d94e5d'],
                         colorAlpha: [0, 1]

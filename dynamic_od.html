@@ -18,7 +18,7 @@
     var myChart = echarts.init(document.getElementById('main'));
     // 指定图表的配置项和数据
     $.getJSON('assets/data/data.json', function(data) {
-        $.getJSON('styleJson_light.json', function(styleJson) {
+        $.getJSON('assets/style/styleJson_light.json', function(styleJson) {
             var options = []
             var hour = []
             for (var i = 0; i < data.length; i++) {

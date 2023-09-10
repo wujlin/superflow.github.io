@@ -66,16 +66,16 @@
                                     </li>
                                     <li class="menu-separator "></li>
                                     <li>
-                                        <a href="part-1.html ", style="font-size: 12px;">01：人工智能做旅游攻略</a>
+                                        <a href="part-1.html ", style="font-size: 12px;">人工智能做旅游攻略</a>
                                     </li>
                                     <li>
-                                        <a href="part-2.html ", style="font-size: 12px;">02：热潮的回落</a>
+                                        <a href="part-2.html ", style="font-size: 12px;">热潮的回落</a>
                                     </li>
                                     <li>
-                                        <a href="part-3.html ", style="font-size: 12px;">03：网红城市的热度消散</a>
+                                        <a href="part-3.html ", style="font-size: 12px;">网红城市的热度消散</a>
                                     </li>
                                     <li>
-                                        <a href="part-4.html ", style="font-size: 12px;">04：冷思考</a>
+                                        <a href="part-4.html ", style="font-size: 12px;">冷思考</a>
                                     </li>
                                 </ul>
                             </div>
@@ -151,19 +151,14 @@
 
 
 
-<section class="pt-120 pb-60" style="background-color: #fff;">
-    <div class=" ">
-        <div class="word" style="color: #000">
-            <p> </p>
-        </div>
-    </div>
+<section class="pt-20 pb-20" style="background-color: #fff;">
 
-        <div class="container">
-            <div class="row resourse pb-60">
-                <div class="'pb-60 juzhong">
-                    <span>图1: 网红城市排行</span>
+        <div class="container" style="display: flex; justify-content: center; align-items: center;">
+            <div class="row resourse">
+                <div class="juzhong">
+                    <!-- <span>图1: 网红城市排行</span> -->
                         <!-- 酒店钻级分布 -->
-                        <div id="wanghong" style="width: 1200px;height: 600px;border: 0 solid;"></div>
+                        <div id="wanghong" style="width: 650px;height: 600px;border: 0 solid;"></div>
                             <script type="text/javascript">
                             // 初始化图表时设置style
                             var chart1 = echarts.init(document.getElementById('wanghong'));
@@ -244,10 +239,10 @@
     </div>
 </section>
 
-<section class="page-header">
-    <div class="page-header__bg" style="background-color: #ffebcd;; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/厦门老牌衰落，旅游产业结构滞后_封面.jpg); background-repeat: no-repeat;background-position: center;"></div>
-    <div class="container text-center pt-20 pb-120">
-        <h2 style="display: inline-block;">厦门：老牌衰落，旅游产业结构滞后</h2>
+<section class="container  pt-60 pb-60">
+    <!-- <div class="page-header__bg" style="background-color: #ffebcd;; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/厦门老牌衰落，旅游产业结构滞后_封面.jpg); background-repeat: no-repeat;background-position: center;"></div> -->
+    <div class="col-lg-12 col-lg-6 text-left">
+        <h2 style="color:#000; font-size: 3rem;">厦门：老牌衰落，旅游产业结构滞后</h2>
     </div>
 </section>
 
@@ -264,6 +259,19 @@
     </div>
 </section>
 
+<div class="container" style="display: flex;justify-content: center;align-items: center;">
+    <div class=" ">
+        <div style="margin-left: 20px; display: flex; flex: 1 1 0%; flex-direction: row; overflow-x: auto; margin-top: 10px;">
+            <div>
+                <img src="assets/images/厦门邮轮.jpg" style="margin-right: 40px; width: 280px; height: 210px;">
+            </div>
+            <div>
+                <img src="assets/images/厦门老牌衰落，旅游产业结构滞后_封面.jpg" style="margin-right: 40px; width: 280px; height: 210px;">
+            </div>
+        </div>
+    </div>
+</div>
+
 <section>
     <div class="container">
         <div class="col-lg-12 col-lg-6 word pt-60">
@@ -276,23 +284,208 @@
     </div>
 </section>
 
+<section class="pt-20 pb-20" style="background-color: #fff;">
 
-<section class="enent-details pt-120 pb-120" style="background: url(assets/images/厦门邮轮.jpg) no-repeat; background-color: transparent; background-position: 10%; background-size:50%">
-    <div class="container">
-        <div class=" ">
-            <div class="word pt-60">
-                <p style="margin-left: 70%;">
-                    因为时代特征而偶然抓住流量的初代网红城市，与其说是因为自身独特的旅游资源、过硬的旅游服务支撑，更多地是在互联网上构建了符合当时人们精神出口的城市符号，在吸引了第一批、第二批进行精神朝圣的游客之后，游客不再通过雾里看花进行构建式想象，城市旅游治理不足、旅游产业结构滞后等缺陷逐渐显露，旅游业也逐渐式微。
-                </p>
+    <div class="container" style="width:800px">
+        <div class="row resourse ">
+
+            <div class="col-md-6 juzhong">
+                <!-- 放旅游人数变化 -->
+                <div id="tour_number" style="width: 100%;height: 600px;border: 0 solid;"></div>
+                <script type="text/javascript">
+                    var dom = document.getElementById('tour_number');
+                        var chart1 = echarts.init(dom, null, {
+                        renderer: 'canvas',
+                        useDirtyRect: false
+                        });
+                        
+                        var option = {
+                                    title: {
+                                        text: '图1：城市历年旅游人数变化',
+                                            subtext: '数据来源：厦门文化和旅游局&西安文化和旅游局',
+                                            left:'right'
+                                    },
+                                    tooltip: {
+                                        trigger: 'axis',
+                                        axisPointer: {
+                                        type: 'cross',
+                                        label: {
+                                            backgroundColor: '#6a7985'
+                                        }
+                                        }
+                                    },
+                                    legend: {
+                                        data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+                                    },
+                                    toolbox: {
+                                        feature: {
+                                        saveAsImage: {}
+                                        },
+                                        left:'left'
+                                    },
+                                    grid: {
+                                        left: '3%',
+                                        right: '4%',
+                                        bottom: '3%',
+                                        containLabel: true
+                                    },
+                                    xAxis: [
+                                        {
+                                        type: 'category',
+                                        boundaryGap: false,
+                                        data: ['2016', '2017',  '2020', '2021']
+                                        }
+                                    ],
+                                    yAxis: [
+                                        {
+                                        type: 'value'
+                                        }
+                                    ],
+                                    series: [
+                                        {
+                                        name: '厦门接待游客数/万人次',
+                                        type: 'line',
+                                        stack: 'Total',
+                                        areaStyle: {},
+                                        emphasis: {
+                                            focus: 'series'
+                                        },
+                                        data: [6770.16, 7830.52 ,7830.52 , 6568.75]
+                                        },
+                                        {
+                                        name: '西安接待游客数/万人次',
+                                        type: 'line',
+                                        stack: 'Total',
+                                        areaStyle: {},
+                                        emphasis: {
+                                            focus: 'series'
+                                        },
+                                        data: [15012.56, 18093.14, 24000, 20000]
+                                        },
+                                    
+                                    ]
+                                    };
+                                chart1.setOption(option);
+                </script>
             </div>
+
+            <div class="col-md-6 juzhong">
+                <!-- 放旅游收入变化 -->
+                <div id="tour_income" style="width: 100%;height: 600px;border: 0 solid;"></div>
+                <script type="text/javascript">
+                    var dom = document.getElementById('tour_income');
+                        var chart2 = echarts.init(dom, null, {
+                        renderer: 'canvas',
+                        useDirtyRect: false
+                        });
+                        var app = {};
+                        
+                        var option = {
+                                        title: {
+                                            text: '图2：城市历年接待旅游收入',
+                                            subtext: '数据来源：厦门文化和旅游局&西安文化和旅游局',
+                                            left:'right'
+                                        },
+                                        tooltip: {
+                                            trigger: 'axis',
+                                            axisPointer: {
+                                            type: 'cross',
+                                            label: {
+                                                backgroundColor: '#6a7985'
+                                            }
+                                            }
+                                        },
+                                        legend: {
+                                            data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+                                        },
+                                        toolbox: {
+                                            feature: {
+                                            saveAsImage: {}
+                                            },
+                                            left:'left'
+                                        },
+                                        grid: {
+                                            left: '3%',
+                                            right: '4%',
+                                            bottom: '3%',
+                                            containLabel: true
+                                        },
+                                        xAxis: [
+                                            {
+                                            type: 'category',
+                                            boundaryGap: false,
+                                            data: ['2016', '2017',  '2020', '2021']
+                                            }
+                                        ],
+                                        yAxis: [
+                                            {
+                                            type: 'value'
+                                            }
+                                        ],
+                                        series: [
+                                            {
+                                            name: '厦门旅游收入/亿元',
+                                            type: 'line',
+                                            stack: 'Total',
+                                            areaStyle: {},
+                                            emphasis: {
+                                                focus: 'series'
+                                            },
+                                            data: [968.26, 1168.52 ,1301.00  , 855.17]
+                                            },
+                                            {
+                                            name: '西安旅游收入/亿元',
+                                            type: 'line',
+                                            stack: 'Total',
+                                            areaStyle: {},
+                                            emphasis: {
+                                                focus: 'series'
+                                            },
+                                            data: [1213.81, 1633.3, 2460, 2030]
+                                            },
+                                        
+                                        ]
+                                        };
+                                chart2.setOption(option);
+                </script>
+            </div>
+    
+
         </div>
     </div>
 </section>
 
-<section class="page-header">
-    <div class="page-header__bg" style="background-color: #ffebcd;; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/重庆美食_1.jpg); background-repeat: no-repeat;background-position: center;"></div>
-    <div class="container text-center pt-20 pb-120">
-        <h2 style="display: inline-block;">重庆：旅游长虹，短视频时代乘风而上</h2>
+
+
+
+
+
+<section>
+    <div class="container">
+        <div class="col-lg-12 col-lg-6 word pt-60">
+            <p>
+                因为时代特征而偶然抓住流量的初代网红城市，与其说是因为自身独特的旅游资源、过硬的旅游服务支撑，更多地是在互联网上构建了符合当时人们精神出口的城市符号，在吸引了第一批、第二批进行精神朝圣的游客之后，游客不再通过雾里看花进行构建式想象，城市旅游治理不足、旅游产业结构滞后等缺陷逐渐显露，旅游业也逐渐式微。
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- <section class="enent-details pt-120 pb-120" style="background: url(assets/images/厦门邮轮.jpg) no-repeat; background-color: transparent; background-position: 10%; background-size:50%"> -->
+    <!-- <div class="container"> -->
+        <!-- <div class=" "> -->
+            <!-- <div class="word pt-60"> -->
+                <!-- <p style="margin-left: 70%;"> -->
+                    <!-- 因为时代特征而偶然抓住流量的初代网红城市，与其说是因为自身独特的旅游资源、过硬的旅游服务支撑，更多地是在互联网上构建了符合当时人们精神出口的城市符号，在吸引了第一批、第二批进行精神朝圣的游客之后，游客不再通过雾里看花进行构建式想象，城市旅游治理不足、旅游产业结构滞后等缺陷逐渐显露，旅游业也逐渐式微。 -->
+                <!-- </p> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </div> -->
+<!-- </section> -->
+
+<section class="container pt-60 pb-60">
+    <!-- <div class="page-header__bg" style="background-color: #ffebcd;; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/重庆美食_1.jpg); background-repeat: no-repeat;background-position: center;"></div> -->
+    <div class="col-lg-12 col-lg-6 text-left">
+        <h2 style="color: #000;font-size: 3rem;">重庆：旅游长虹，短视频时代乘风而上</h2>
     </div>
 </section>
 
@@ -308,7 +501,7 @@
 </section>
 
 <section>
-    <div class="container ">
+    <div class="container " style="width: 680px;">
         <!-- /.team-about__top -->
         <div class="row ">
             <div class="col-lg-6 testimonials-one__single">
@@ -351,7 +544,7 @@
 </section>
 
 
-<div class="container" style="display: flex; justify-content: center; align-items: center;">
+<div class="container pb-30" style="width: 680px">
     <div class=" ">
         <div style="margin-left: 20px; display: flex; flex-direction: row; overflow-x: auto; margin-top: 10px;">
             <div>
@@ -368,17 +561,25 @@
     </div>
 </div>
 
-<section class="enent-details pt-120 pb-120" style="background: url(assets/images/重庆美食_2.jpg) no-repeat; background-color: transparent; background-position: 10%; background-size:50%; margin-top: 70pt;">
+
+<section>
     <div class="container">
-        <div class=" ">
-            <div class="word pt-60">
-                <p style="margin-left: 70%;">
-                    另一方面，究其重庆火起来的原因，与美食息息相关。据抖音统计，在播放量 TOP100 的城市形象视频内容分布中，地方饮食占到了 36%，在众多内容类别中排名第一。火锅、重庆小面、红油抄手、红糖糍粑、凉虾凉糕等品种多样的重庆美食，为游客们提供更多饮食选择性。且由于火锅在全国普及度高，也降低了游客接受重庆美食的壁垒。红色的牛油锅底、九宫格的火锅更为打卡的食客们提供了拍照素材。
-                </p>
-            </div>
+        <div class="col-lg-12 col-lg-6 word">
+            <p>另一方面，究其重庆火起来的原因，与美食息息相关。据抖音统计，在播放量 TOP100 的城市形象视频内容分布中，地方饮食占到了 36%，在众多内容类别中排名第一。火锅、重庆小面、红油抄手、红糖糍粑、凉虾凉糕等品种多样的重庆美食，为游客们提供更多饮食选择性。且由于火锅在全国普及度高，也降低了游客接受重庆美食的壁垒。红色的牛油锅底、九宫格的火锅更为打卡的食客们提供了拍照素材。</p>
         </div>
     </div>
 </section>
+
+<div class="container" style="display: flex;justify-content: center;align-items: center;">
+    <div class=" ">
+        <div style="margin-left: 20px; display: flex; flex: 1 1 0%; flex-direction: row; overflow-x: auto; margin-top: 10px;">
+            <div>
+                <img src="assets/images/重庆美食合集.jpg" style=" width: 680px; height: 510px;">
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <section>
     <div class="container">
@@ -390,25 +591,22 @@
     </div>
 </section>
 
-<section class="page-header">
-    <div class="page-header__bg" style="background-color: #ffebcd;; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/八大局便民市场人流回落.png); background-repeat: no-repeat;background-position: center;"></div>
-    <div class="container text-center pt-20 pb-120">
-        <h2 style="display: inline-block;">曹县：顺势而为，流量提振特色产业</h2>
+<section class="container pt-60 pb-60">
+    <!-- <div class="page-header__bg" style="background-color: #ffebcd;; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/八大局便民市场人流回落.png); background-repeat: no-repeat;background-position: center;"></div> -->
+    <div class="col-lg-12 col-lg-6 text-left">
+        <h2 style="color:#000; font-size: 3rem;">曹县：顺势而为，流量提振特色产业</h2>
     </div>
 </section>
 
-
-<section class="enent-details pt-120 pb-120" style="background: url(assets/images/曹县指数.png) no-repeat; background-color: transparent; background-position: 10%; background-size:50%">
+<section>
     <div class="container">
-        <div class=" ">
-            <div class="word pt-60">
-                <p style="margin-left: 70%;">
-                    2021 年 5 月，网红大硕一句魔性十足的“山东曹县牛逼 666 我的宝贝儿”，在抖音快手等短视频平台引发全民模仿热潮，并被网友二创为“北上广曹”等诸多热梗，将处于鲁豫交界的小城迅速带红。不同于以往因为自然景观、历史文化等具有丰富旅游资源的城市，曹县的走红更像是具有娱乐形式的网络米姆传播带来的热度。
-                </p>
-                <p style="margin-left: 70%;">
-                    而随着各大媒体对“热梗”背后的曹县进行分析，发出《鲁西南小城曹县“走红”背后：调侃、夸张的演绎引发模仿跟评》、《曹县有梗！只是发展内功的“点火器”》数篇报道后，网友也逐渐意识到，这所名不见经传的城市早早地烙上了互联网基因。
-                </p>
-            </div>
+        <div class="col-lg-12 col-lg-6 word pt-60">
+            <p>
+                2021 年 5 月，网红大硕一句魔性十足的“山东曹县牛逼 666 我的宝贝儿”，在抖音快手等短视频平台引发全民模仿热潮，并被网友二创为“北上广曹”等诸多热梗，将处于鲁豫交界的小城迅速带红。不同于以往因为自然景观、历史文化等具有丰富旅游资源的城市，曹县的走红更像是具有娱乐形式的网络米姆传播带来的热度。
+            </p>
+            <p>
+                而随着各大媒体对“热梗”背后的曹县进行分析，发出《鲁西南小城曹县“走红”背后：调侃、夸张的演绎引发模仿跟评》、《曹县有梗！只是发展内功的“点火器”》数篇报道后，网友也逐渐意识到，这所名不见经传的城市早早地烙上了互联网基因。
+            </p>
         </div>
     </div>
 </section>
@@ -438,21 +636,19 @@
     </div>
 </section>
 
-<section>
-    <div class="container">
-        <div class="col-lg-12 col-lg-6 word pt-60">
-            <p>
+
+
+<section style="background-color: #242323;">
+    <div class="container" style="margin-top: 50px;">
+        <div class="col-lg-12 col-lg-6 word pt-60 pb-60">
+            <p style="color:#fff">
                 当然，一座城市长期发展的质量与应对网络热度的关联非常有限，但运用好互联网热度与涌来的关注度，对城市发展确实是难得的机会。然而，城市的网络关注度与城市旅游人数、人均旅游消费并非简单的因果关系，而与城市的旅游依赖程度、公共服务能力、公共建设水平等息息相关。
-            </p>
-            <p>
+            <p style="color:#fff">
                 网络关注下流量的迅速集聚，极大提升了城市的公共服务成本，怎样去勾连社会保障体系、旅游服务系统为涌入的游客带来好的体验，进一步促进口碑传播？怎样去利用好陡增的热度与关注度去增益城市发展、人才引进，切实提升城市的经济发展质量，将网红变成“长红”？这都是城市需要思考的命题。
             </p>
         </div>
     </div>
 </section>
-
-
-
 
 </div>
 

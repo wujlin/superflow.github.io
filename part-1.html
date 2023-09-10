@@ -61,21 +61,18 @@
                             <div>
                                 <a href="javascript:;" id="icon-dian"> <i class="iconfont icon-dian" style="font-size: 40px; color: #000;line-height: 1; "></i></a>
                                 <ul class="menu " >
-                                    <li>
-                                        <a href="index.html ",style="font-size: 14px;">首页：淄博的潮起潮落</a>
-                                    </li>
                                     <li class="menu-separator "></li>
                                     <li>
-                                        <a href="part-1.html ", style="font-size: 12px;">01：人工智能做旅游攻略</a>
+                                        <a href="part-1.html ", style="font-size: 12px;">人工智能做旅游攻略</a>
                                     </li>
                                     <li>
-                                        <a href="part-2.html ", style="font-size: 12px;">02：热潮的回落</a>
+                                        <a href="part-2.html ", style="font-size: 12px;">热潮的回落</a>
                                     </li>
                                     <li>
-                                        <a href="part-3.html ", style="font-size: 12px;">03：网红城市的热度消散</a>
+                                        <a href="part-3.html ", style="font-size: 12px;">网红城市的热度消散</a>
                                     </li>
                                     <li>
-                                        <a href="part-4.html ", style="font-size: 12px;">04：冷思考</a>
+                                        <a href="part-4.html ", style="font-size: 12px;">冷思考</a>
                                     </li>
                                 </ul>
                             </div>
@@ -124,7 +121,7 @@
     }}'>
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="transition-duration: 2000ms;">
-                <div class="image-layer" style="background-image: linear-gradient(to top, rgb(34, 34, 34), transparent), url('assets/images/chongqing.jpg');background-position: center;"></div>
+                <div class="image-layer" style="background-image: linear-gradient(to top, rgb(34, 34, 34), transparent), url('assets/images/食住行_封面.jpg');background-position: center;"></div>
                 <!-- /.image-layer -->
                     <div class="container">
                         <div class="row justify-content-start">
@@ -149,11 +146,92 @@
 </div>
 
 <!-- 接下来制作与AI的对话气泡框，实现一个交互动画的效果 -->
-<div class="container">
-    <div class="col-lg-12 col-lg-6 word pt-60 ">
-        <img src='assets/vedio/AI_conversation.gif' alt="与AI的聊天对话.gif" style="width:600px;height:283px;object-fit:cover" width="600" height="283">
-    </div>
-</div>
+        <div class="chatbox">
+            <div class="message-container">
+                <img src="assets/images/user-avatar.svg" alt="User Avatar" class="avatar left-avatar">
+                <div class="message left" id="message1"><p>我要去淄博旅游，帮我做个攻略，从出行、住宿、食物三个方面展开</p></div>
+            </div>
+        </br>
+
+            <div class="message-container hidden" id="message2-container">
+                <img src="assets/images/ai-avatar.svg" alt="AI Avatar" class="avatar right-avatar">
+                <div class="message right" id="message2">
+                    <h2>出行的部分：</h2>
+                    <p>首先，你要到达淄博，可以选择坐飞机、火车或者汽车。如果你选择乘飞机的话，需要先飞至济南市，然后坐汽车前往淄博市。如果你选择火车的话，淄博有火车站，你可以直接抵达淄博。</p>
+                    <p>在淄博市内，公交车和出租车都是很好的选择。淄博市的公交线路比较完善，可以达到大部分的旅游景点。出租车的话，虽然价格稍高，但是会更加方便和快捷。</p>
+                    <h2>住宿的部分：</h2>
+                    <p>淄博市有很多的酒店和招待所可以供你选择。如果你的预算比较充足的话，你可以选择如淄博希尔顿酒店、万达嘉华酒店等高端酒店。如果你的预算比较紧张的话，那么像速8酒店、7天连锁酒店等经济型酒店也会是不错的选择。</p>
+                    <h2>食物的部分：</h2>
+                    <p>淄博市的美食也是非常值得一试的。比如淄博烧烤，这是淄博的特色烧烤，口感独特，非常美味。淄博还有一个非常有名的小吃，叫做焦玫瑰，是一种鸡蛋和玫瑰酱做的糕点，口味独特，非常好吃。</p>
+                    <h2>旅游线路参考：</h2>
+                        第一天：抵达淄博，安排好住宿后可以逛一逛淄博的市区，体验一下淄博的城市氛围，晚上可以尝试淄博烧烤。</p>
+                        第二天：游览淄博的名胜古迹，例如周公城和著名的博山石城。</p>
+                        第三天：逛淄博博物馆，了解淄博的历史文化，晚上可以品尝淄博的地道美食焦玫瑰。</p>
+                        记得随时关注天气预报，良好的天气可以让你的旅行体验更佳。以上，祝你在淄博有一个愉快的旅行！</p>
+                </div>
+            </div>
+        </br>
+
+            <div class="message-container hidden" id="message3-container">
+                <img src="assets/images/user-avatar.svg" alt="User Avatar" class="avatar left-avatar">
+                <div class="message left" id="message3">
+                    <p>那淄博有哪些好吃的烧烤店呢？推荐几个</p>
+                </div>
+            </div>
+        </br>
+
+            <div class="message-container hidden" id="message4-container">
+                <img src="assets/images/ai-avatar.svg" alt="AI Avatar" class="avatar right-avatar">
+                <div class="message right" id="message4">
+                    <h2>出行的部分：</h2>
+                    <p>淄博市的烧烤店有很多，以下是一些根据网络评价较高的烧烤店推荐：</p>
+                    <p>老郭羊肉串烧烤店：位于淄博市张店区新村路张石高速公路出口西50米。这里的羊肉串位居淄博烧烤之首，口味地道，入口即化。</p>
+                    <p>五岳烧烤城：位于张店区北城新区科技桥头。以野生山鸡、山鸽、野兔等独特的烧烤为主，新颖别致。</p>
+                    <p>青天烧烤店：位于淄博市桓台县中城风光大街中段。此店在当地是非常具有口碑的一家烧烤小店，受到了居民招牌烤肉十分受欢迎。</p>
+                    <p>官庄烧烤城：位于临淄区浩坤湖旁标题路与新河路交叉口。这是一家档口众多的大型烧烤广场，种类繁多，适合朋友聚会。</p>
+                    <p>以上几个都是非常不错的选择，具体可以根据你的口味和位置来选择。不过不论哪一家，由于烧烤店的营业时间有可能会有变动，建议在前往之前先致电商家确认。</p>
+                </div>
+            </div>
+        </br>
+
+        <div class="message-container hidden" id="message5-container">
+            <img src="assets/images/user-avatar.svg" alt="User Avatar" class="avatar left-avatar">
+            <div class="message left" id="message5">
+                <p>要吃淄博美食的话，哪些酒店比较适合居住呢？</p>
+            </div>
+        </div>
+        </br>
+
+        <div class="message-container hidden" id="message6-container">
+        <img src="assets/images/ai-avatar.svg" alt="AI Avatar" class="avatar right-avatar">
+        <div class="message right" id="message6">
+            如果希望住宿地点旁边有丰富的美食选择，以下是一些在市中心、交通便利、周边美食众多的酒店推荐：
+            <p>淄博蓝海商务酒店：位于张店区，距离淄博站仅1公里，附近有多家餐厅和小吃店，非常方便尝试当地的美食。</p>
+            <p>淄博元亨大酒店：位于淄川区大青山路，周围有很多路边小吃和餐馆，是品尝当地美食的好地方。</p>
+            <p>万达嘉华酒店：位于张店区高新技术开发区内，酒店自身的餐饮设施就很完善，旁边就是万达广场，有众多的美食选择。</p>
+            <p>共青团路伯爵大酒店：位于张店区，紧邻购物、餐饮等生活设施，交通便利，美食丰富。
+                选择酒店的时候，可以综合考虑交通便利性、周边的餐饮和购物设施、酒店自身的设施和服务等因素。</p>
+        </div>
+        </div>
+        </br>
+
+        <div class="message-container hidden" id="message7-container">
+        <img src="assets/images/user-avatar.svg" alt="User Avatar" class="avatar left-avatar">
+        <div class="message left" id="message7">
+            <p>好嘞，现在出发！</p>
+        </div>
+        </div>
+        </br>
+
+        <div class="message-container hidden" id="message8-container">
+        <img src="assets/images/ai-avatar.svg" alt="AI Avatar" class="avatar right-avatar">
+        <div class="message right" id="message8">
+            <p>祝你旅途愉快！期待你分享淄博的美食和旅行体验。如果在旅行过程中需要任何帮助，随时联系我。一路平安！</p>
+        </div>
+        </div>
+        </br>
+
+        </div>
 
 <div class = 'container'>  
     <div class="col-lg-12 col-lg-6 word pt-60">
@@ -178,7 +256,7 @@
 
 <div class="container">
     <div class="col-lg-12 col-lg-6 text-left">
-        <h2 style="color: #000;margin-top:12px">交通</h2>
+        <h2 style="color: #000;margin-top:12px;font-size: 3rem;">交通</h2>
     </div>
 </div>
 
@@ -203,130 +281,13 @@
         </div>
     </div>
 
-    <section class="pt-120 pb-60" style="background-color: #fff;">
-        <div class=" ">
-            <div class="word" style="color: #000;">
-                <p>如图1所示，我们可以看到4-5月份有来自全国的旅客前往淄博，这些人流为淄博的经济发展注入了活力。</p>
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="'row resourse pb-60">
-                <div class="pt-60 juzhong">
+    <section class=" " style="background-color: #fff;">
 
-                <div id="ts_mobility" style="width: 1200px;height: 600px;border: 0 solid;"></div>
-                <script type="text/javascript">
-                // 初始化图表时设置style
-                var myChart = echarts.init(document.getElementById('ts_mobility'));
-                // 指定图表的配置项和数据
-                $.getJSON('assets/data/ts_mobility.json', function(data) {
-                    $.getJSON('assets/style/styleJson_light.json', function(styleJson) {
-                        var options = []
-                        var hour = []
-                        for (var i = 0; i < data.length; i++) {
-                            hour.push(data[i][0]['date'])
-                            options.push({
-                                title: { text: data[i][0]['date'] + '时人口分布' ,textStyle:{color:'#000'}},
-                                series: [{
-                                type: 'lines',
-                                coordinateSystem: 'bmap',
-                                data: data[i][0]['data'],
-                                lineStyle: {
-                                    normal: {
-                                        //color: '#a6c84c',
-                                        width: 1.5,
-                                        curveness: 0.1
-                                    }
-                                },
-                                effect: {
-                                    show: true,
-                                    period: 10,
-                                    constantSpeed: 100,
-                                    trailLength: 0.7,
-                                    symbolSize: 7
-                                },
-                            }, {
-                                type: 'effectScatter',
-                                coordinateSystem: 'bmap',
-                                label: {
-                                    emphasis: {
-                                        show: true,
-                                        position: 'right',
-                                        formatter: function(params) { return params['name'] }
-                                    }
-                                },
-                                data: data[i][1],
-                                symbolSize: function(params) { return params[2] * 2 }
-                            }]
-                            })
-                        }
-
-                        var option = {
-                            timeline: {
-                                data: hour,
-                                orient: 'vertical',
-                                left: '90%',
-                                top: '5%',
-                                height: '80%',
-                                width: '8%',
-                                axisType: 'category',
-                                autoPlay: true,
-                                playInterval: 300,
-                                //rewind: true,
-                                currentIndex: 0,
-                                inverse: true
-                            },
-                            bmap: {
-                                center: [118.036449, 36.603488],
-                                zoom: 9,
-                                roam: true,
-                                mapStyle: {
-                                    styleJson: styleJson
-                                }
-                            },
-                            visualMap: {
-                                max: 40,
-                                inRange: {
-                                    color: ['green', '#eac736', '#d94e5d'],
-                                    colorAlpha: [0, 1]
-                                },
-                            },
-                            title: {
-                                text: "",
-                                textStyle: {
-                                    color: '#fff',
-                                    fontSize: 30
-                                }
-                            },
-                            legend: {},
-                            series: [{}],
-                            options: options
-                        };
-
-                        // 使用刚指定的配置项和数据显示图表。
-                        myChart.setOption(option, true);
-                    })
-                })
-                </script>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="pt-120 pb-60" style="background-color: #fff;">
-        <div class=" " style="margin-top:120px">
-            <div class="word" style="color: #000;">
-                <p>我们对前往淄博的日均人流量进行了统计，并绘制了折线图。如图2所示，前往淄博的日均人流量在4-5月份达到了顶峰。</p>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="'row resourse pb-60">
-                <div class="pb-60 juzhong">
-                    <span>图2：日均人流量折线图</span>
-                    <div id="t_mobility" style="width: 1200px;height: 600px;border: 0 solid;"></div>
+        <div class="container" style="display: flex; justify-content: center; align-items: center;">
+            <div class="row resourse pt-30">
+                <div class="juzhong">
+                    <!-- <span>图2：日均人流量折线图</span> -->
+                    <div id="t_mobility" style="width: 700px;height: 550px;border: 0 solid;"></div>
             
                         <script type="text/javascript">
                             var dom = document.getElementById('t_mobility');
@@ -334,15 +295,13 @@
                             renderer: 'canvas',
                             useDirtyRect: false
                             });
-                            var app = {};
-                            var option;
 
                             $.get('assets/data/mobility_time_new.json', function (data) {
                             chart2.setOption(
                                 (option = {
                                 title: {
-                                    text: '淄博日均迁入指数',
-                                    left: '1%'
+                                    text: '图1：淄博日均迁入指数',
+                                    left: 'right'
                                 },
                                 tooltip: {
                                     trigger: 'axis'
@@ -359,13 +318,14 @@
                                 },
                                 yAxis: {},
                                 toolbox: {
-                                    right: 10,
+                                    left: 10,
                                     feature: {
                                     dataZoom: {
                                         yAxisIndex: 'none'
                                     },
                                     restore: {},
-                                    saveAsImage: {}
+                                    saveAsImage: {},
+                                    left: 'left',
                                     }
                                 },
                                 dataZoom: [
@@ -377,6 +337,7 @@
                                     }
                                 ],
                                 visualMap: {
+                                    // orient: 'horizontal',
                                     top: 50,
                                     right: 10,
                                     pieces: [
@@ -420,29 +381,6 @@
                                     data: data.map(function (item) {
                                     return item[1];
                                     }),
-                                    markLine: {
-                                    silent: true,
-                                    lineStyle: {
-                                        color: '#333'
-                                    },
-                                    data: [
-                                        {
-                                        yAxis: 100
-                                        },
-                                        {
-                                        yAxis: 200
-                                        },
-                                        {
-                                        yAxis: 300
-                                        },
-                                        {
-                                        yAxis: 400
-                                        },
-                                        {
-                                        yAxis: 500
-                                        }
-                                    ]
-                                    }
                                 }
                                 })
                             );
@@ -454,9 +392,122 @@
         </section>
 
 
+
+    <section class="pt-120 pb-60" style="background-color: #fff;">
+            <div class="word" style="color: #000;">
+                <!-- <p>如图1所示，我们可以看到4-5月份有来自全国的旅客前往淄博，这些人流为淄博的经济发展注入了活力。</p> -->
+        </div>
+        
+        <div class="container">
+            <div class="row resourse pb-240">
+                <div class="pt-20 juzhong">
+
+                <div id="ts_mobility" style="width: 1200px;height: 600px;border: 0 solid;"></div>
+                <script type="text/javascript">
+                // 初始化图表时设置style
+                var chart1 = echarts.init(document.getElementById('ts_mobility'));
+                // 指定图表的配置项和数据
+                $.getJSON('assets/data/ts_mobility.json', function(data) {
+                    $.getJSON('assets/style/styleJson_light.json', function(styleJson) {
+                        var options = []
+                        var hour = []
+                        for (var i = 0; i < data.length; i++) {
+                            hour.push(data[i][0]['date'])
+                            options.push({
+                                title: { text: data[i][0]['date'] + '日，其他地方-淄博的人口流动' ,textStyle:{color:'#000'},
+                                subtext: '数据来源：高德地图',},
+                                series: [{
+                                type: 'lines',
+                                coordinateSystem: 'bmap',
+                                data: data[i][0]['data'],
+                                lineStyle: {
+                                    normal: {
+                                        //color: '#a6c84c',
+                                        width: 1.5,
+                                        curveness: 0.1
+                                    }
+                                },
+                                effect: {
+                                    show: true,
+                                    period: 10,
+                                    constantSpeed: 100,
+                                    trailLength: 0.7,
+                                    symbolSize: 7
+                                },
+                            }, {
+                                type: 'effectScatter',
+                                coordinateSystem: 'bmap',
+                                label: {
+                                    emphasis: {
+                                        show: true,
+                                        position: 'right',
+                                        formatter: function(params) { return params['name'] }
+                                    }
+                                },
+                                data: data[i][1],
+                                symbolSize: function(params) { return params[2] * 1.2 }
+                            }]
+                            })
+                        }
+
+                        var option = {
+                            timeline: {
+                                data: hour,
+                                orient: 'vertical',
+                                left: '90%',
+                                top: '5%',
+                                height: '80%',
+                                width: '8%',
+                                axisType: 'category',
+                                autoPlay: true,
+                                playInterval: 300,
+                                //rewind: true,
+                                currentIndex: 0,
+                                inverse: true
+                            },
+                            bmap: {
+                                center: [118.036449, 36.603488],
+                                zoom: 7,
+                                roam: true,
+                                mapStyle: {
+                                    styleJson: styleJson
+                                }
+                            },
+                            visualMap: {
+                                max: 40,
+                                inRange: {
+                                    color: ['green', '#eac736', '#d94e5d'],
+                                    colorAlpha: [0, 1]
+                                },
+                            },
+                            title: {
+                                text: "",
+                                textStyle: {
+                                    color: '#fff',
+                                    fontSize: 30
+                                }
+                            },
+                            legend: {},
+                            series: [{}],
+                            options: options
+                        };
+
+                        // 使用刚指定的配置项和数据显示图表。
+                        chart1.setOption(option, true);
+                    })
+                })
+                </script>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
         <div class="container">
             <div class="col-lg-12 col-lg-6">
-                <h2 style="color: #000; margin: 12px;"> 住宿</h2>
+                <h2 style="color: #000; margin-top: 240px;font-size: 3rem;"> 住宿</h2>
             </div>
         </div>
 
@@ -478,18 +529,14 @@
             </div>
         </div>
 
-        <section class="pt-120 pb-60" style="background-color: #fff;">
-            <div class=" ">
-                <div class="word" style="color: #000">
-                    <p>我们对酒店类型信息进行了统计，如图3显示</p>
-                </div>
-            </div>
+        <section class="pt-20 pb-20" style="background-color: #fff;">
 
-                <div class="container">
-                    <div class="row resourse pb-60">
-                        <div class="'pb-60 juzhong">
-                            <span>图3：酒店类型柱状图</span>
-                            <div id="hotel_class" style="width: 1200px;height: 600px;border: 0 solid;"></div>
+                <div class="container" style="width:800px">
+                    <div class="row resourse ">
+
+                        <div class="col-md-6 juzhong">
+                            <!-- <span>图3：酒店类型柱状图</span> -->
+                            <div id="hotel_class" style="width: 100%;height: 600px;border: 0 solid;"></div>
                             <script type="text/javascript">
                             // 初始化图表时设置style
                                 var chart3 = echarts.init(document.getElementById('hotel_class'));
@@ -498,23 +545,27 @@
                                 var option;
                                 option = {
                                     title: {
-                                        text: '酒店类型分布',
-                                        subtext: '数据来源：酒店之家'
+                                        text: '图3：酒店类型分布',
+                                        subtext: '数据来源：酒店之家',
+                                        left:'right'
                                     },
                                     tooltip: {
                                         trigger: 'axis'
                                     },
                                     legend: {
-                                        data: ['2023年4月', '2023年7月']
+                                        data: ['2023年4月', '2023年7月'],
+                                        left:'left',
+                                        orient: 'vertical'
                                     },
                                     toolbox: {
-                                        show: true,
+                                        show: false,
                                         feature: {
                                         dataView: { show: true, readOnly: false },
                                         magicType: { show: true, type: ['line', 'bar'] },
                                         restore: { show: true },
                                         saveAsImage: { show: true }
-                                        }
+                                        },
+                                        left: 'left'
                                     },
                                     calculable: true,
                                     xAxis: [
@@ -566,29 +617,12 @@
                                     };
                         
                                     option && chart3.setOption(option);        
-                                
-                        
-                        
                                 </script>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
+                        </div>
+                                <!-- 类型图结束 -->
 
-
-        <section class="pt-120 pb-60" style="background-color: #fff;">
-            <div class=" ">
-                <div class="word" style="color: #000">
-                    <p>我们对淄博市的民宿信息进行了统计，可视化了每个区的民宿数量分布，也有助于我们……</p>
-                </div>
-            </div>
-
-                <div class="container">
-                    <div class="row resourse pb-60">
-                        <div class="'pb-60 juzhong">
-                            <span>图4：民宿地理分布</span>
-                            <div id="s_minsu" style="width: 1200px;height: 600px;border: 0 solid;"></div>
+                    <div class="col-md-6 juzhong">
+                        <div id="s_minsu" style="width: 100%;height: 600px;border: 0 solid;"></div>
                             <script type="text/javascript">
                             // 初始化图表时设置style
                             var chart4 = echarts.init(document.getElementById('s_minsu'));
@@ -631,7 +665,7 @@
                                     calculable: true
                                     },
                                     toolbox: {
-                                    show: true,
+                                    show: false,
                                     //orient: 'vertical',
                                     left: 'left',
                                     top: 'top',
@@ -660,14 +694,13 @@
                                 })
                             });    
                             </script>
-                        </div>
                     </div>
+                    <!-- 地图结束 -->
+
                 </div>
+            </div>
         </section>
-
-
-
-
+    
 
 
 
@@ -678,18 +711,16 @@
         </div>
 
         
-        <section class="pt-120 pb-60" style="background-color: #fff;">
-            <div class=" ">
+        <section class="pt-20 pb-20" style="background-color: #fff;">
                 <div class="word" style="color: #000">
-                    <p>我们对淄博与周边县市的酒店预订率进行了统计，如图5显示，淄博市的酒店预订率明显高于周边县市，这也说明了淄博市的酒店热度远高于周边县市。</p>
-                </div>
+                    <!-- <p>我们对淄博与周边县市的酒店预订率进行了统计，如图5显示，淄博市的酒店预订率明显高于周边县市，这也说明了淄博市的酒店热度远高于周边县市。</p> -->
             </div>
 
-                <div class="container">
-                    <div class="row resourse pb-60">
-                        <div class="'pb-60 juzhong">
-                            <span>图5：酒店预订率对比</span>
-                            <div id="hotel_reservation" style="width: 1200px;height: 600px;border: 0 solid;"></div>
+                <div class="container", style="display: flex; justify-content: center; align-items: center;">
+                    <div class="row resourse pb-20">
+                        <div class="'pb-20 juzhong">
+                            <!-- <span>图5：酒店预订率对比</span> -->
+                            <div id="hotel_reservation" style="width: 650px;height: 600px;border: 0 solid;"></div>
                                 <script type="text/javascript">
                                 // 初始化图表时设置style
                                 var chart5 = echarts.init(document.getElementById('hotel_reservation'));
@@ -697,7 +728,9 @@
 
                                 var option_5 = {
                                     title: {
-                                        text: '酒店预订率对比'
+                                        text: '图5：酒店预订率对比',
+                                        subtext: '数据来源：淄博市商务局微信公众号',
+                                        left:'right',
                                     },
                                     tooltip: {
                                         trigger: 'axis'
@@ -713,7 +746,8 @@
                                         magicType: { type: ['line', 'bar'] },
                                         restore: {},
                                         saveAsImage: {}
-                                        }
+                                        },
+                                        left: 'left'
                                     },
                                     xAxis: {
                                         type: 'category',
@@ -799,41 +833,42 @@
         </section>
 
     <div class="container">
-        <div class="col-lg-12 col-lg-6 word pt-60">
+        <div class="col-lg-12 col-lg-6 word pt-20">
             <p>据《中国旅游目的地复苏调查报告》显示，来淄博旅游的游客中，“90 后”、“00 后”群体占比超八成，其中“00 后”超五成，其中有不少是到淄博来体验烧烤的大学生。</p>
     </div>
 </div>
 
-<section class="pt-120 pb-60" style="background-color: #fff;">
-    <div class=" ">
-        <div class="word" style="color: #000">
-            <p>我们对来淄博的游客年龄进行了统计</p>
-        </div>
-    </div>
+<section class="pt-20" style="background-color: #fff;">
 
-        <div class="container">
-            <div class="row resourse pb-60">
-                <div class="'pb-60 juzhong">
-                    <span>图6：游客年龄分布</span>
-                        <div id="tourist_age" style="width: 1200px;height: 600px;border: 0 solid;"></div>
+        <div class="container" style="width: 1000px">
+            <div class="row resourse">
+
+                <div class="col-md-6 juzhong">
+                    <!-- <span>图6：游客年龄分布</span> -->
+                        <div id="tourist_age" style="width: 100%;height: 300px;border: 0 solid;"></div>
                         <script type="text/javascript">
                         // 初始化图表时设置style
                         var chart6 = echarts.init(document.getElementById('tourist_age'));
                         // 指定图表的配置项和数据
                     
                         var option = {
+                            title:{
+                                text: '图6：游客年龄分布',
+                                subtext: '数据来源：中国旅游目的地复苏调查报告',
+                                left:'right'},
                             tooltip: {
                                 trigger: 'item',
                             },
                             legend: {
                                 top: '5%',
-                                left: 'center'
+                                left: 'left',
+                                orient: 'vertical',
                             },
                             series: [
                                 {
                                 name: '年龄占比',
                                 type: 'pie',
-                                radius: ['40%', '70%'],
+                                radius: ['20%', '50%'],
                                 avoidLabelOverlap: false,
                                 itemStyle: {
                                     borderRadius: 10,
@@ -869,33 +904,45 @@
                         chart6.setOption(option);
                     </script>
                 </div>
-            </div>
-        </div>
-</section>
+                <!-- 饼图1结束 -->
 
-<section class="pt-120 pb-60" style="background-color: #fff;">
-    <div class=" ">
-        <div class="word" style="color: #000">
-            <p>我们对来淄博的游客来源地进行了统计</p>
-        </div>
-    </div>
-
-        <div class="container">
-            <div class="row resourse pb-60">
-                <div class="'pb-60 juzhong">
-                    <span>图7：游客来源地分布</span>
+                <div class="col-md-6 juzhong">
+                    <!-- <span>图7：游客来源地分布</span> -->
                         <!-- 插入旅客来源的饼图 -->
-                    <div id="tourist_source" style="width: 1200px;height: 600px;border: 0 solid;"></div>
+                    <div id="tourist_source" style="width: 100%;height: 300px;border: 0 solid;"></div>
                     <script type="text/javascript">
                     // 初始化图表时设置style
                     var chart7 = echarts.init(document.getElementById('tourist_source'));
                     // 指定图表的配置项和数据
 
                     var option = {
+                        graphic: [{
+                            type: 'text',
+                            left: '25%',  // 调整到适合的位置
+                            bottom: '30%',  // 距离底部的距离
+                            style: {
+                                text: '4月',
+                                textAlign: 'center',
+                                fill: '#333',
+                                fontSize: 14,
+                                fontWeight: 'bold'
+                            }
+                        }, {
+                            type: 'text',
+                            left: '75%',  // 调整到适合的位置
+                            bottom: '30%',  // 距离底部的距离
+                            style: {
+                                text: '7月',
+                                textAlign: 'center',
+                                fill: '#333',
+                                fontSize: 14,
+                                fontWeight: 'bold'
+                            }
+                        }],
                         title: {
-                        text: '4月份与7月份淄博游客来源对比',
-                        subtext: '实地调研：淄博餐饮、住宿业财源滚滚，供不应求隐忧浮现',
-                        left: 'center'
+                        text: '图7：4月份与7月份淄博游客来源对比',
+                        subtext: '数据来源：《实地调研：淄博餐饮、住宿业财源滚滚，\n供不应求隐忧浮现》',
+                        left: 'right'
                         },
                         tooltip: {
                         trigger: 'item',
@@ -903,13 +950,14 @@
                         },
                         legend: {
                         orient: 'vertical',
-                        left: 'left'
+                        left: '0%',
+                        top: '5%'
                         },
                         series: [
                         {
                             name: '4月份游客来源',
                             type: 'pie',
-                            radius: '50%',
+                            radius: '25%',
                             center: ['25%', '50%'],
                             data: [
                             { value: 80, name: '山东' },
@@ -926,7 +974,7 @@
                         {
                             name: '7月份游客来源',
                             type: 'pie',
-                            radius: '50%',
+                            radius: '25%',
                             center: ['75%', '50%'],
                             data: [
                             { value: 80, name: '北京、上海、江苏、\n 广东、河北、山西' },
@@ -945,6 +993,7 @@
                     chart7.setOption(option);
                     </script>
                 </div>
+                <!-- 饼图2结束 -->
             </div>
         </div>
 </section>
@@ -958,25 +1007,24 @@
         </div>
     </div>
 
-    <section class="pt-120 pb-60" style="background-color: #fff;">
-        <div class=" ">
-            <div class="word" style="color: #000">
-                <p>我们对淄博酒店的等级信息进行了统计</p>
-            </div>
-        </div>
+    <section class="pb-20" style="background-color: #fff;">
 
-            <div class="container">
-                <div class="row resourse pb-60">
-                    <div class="'pb-60 juzhong">
-                        <span>图8：酒店等级分布</span>
+            <div class="container" style="display: flex; justify-content: center; align-items: center;" >
+                <div class="row resourse">
+                    <div class="juzhong">
+                        <!-- <span>图8：酒店等级分布</span> -->
                             <!-- 酒店钻级分布 -->
-        <div id="star" style="width: 1200px;height: 600px;border: 0 solid;"></div>
+        <div id="star" style="width: 650px;height: 600px;border: 0 solid;"></div>
         <script type="text/javascript">
         // 初始化图表时设置style
         var chart8 = echarts.init(document.getElementById('star'));
         // 指定图表的配置项和数据
 
         var option = {
+            title:{
+                text: '图8：酒店等级分布',
+                subtext: '数据来源：酒店之家',
+                left:'right'},
             tooltip: {
                 trigger: 'axis',
                 axisPointer: {
@@ -1066,17 +1114,17 @@
 <!-- <img src="assets/images/roast_1.png" alt="9.png" style="width: 980px; height: 896px; object-fit: cover; object-position: 50% 50%;" width="980" height="620" fetchpriority="high"> -->
 
 
-<section class="page-header">
-    <div class="page-header__bg" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(assets/images/roast_1.png);background-position: 0 -200px;background-color: transparent;"></div>
-    <div class="container text-center pt-20 pb-120">
-        <h2 style="display: inline-block;">饮食</h1>
+<section class="container">
+    <!-- <div class="page-header__bg" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(assets/images/roast_1.png);background-position: 0 -200px;background-color: transparent;"></div> -->
+    <div class="col-lg-12 col-lg-6 text-left">
+        <h2 style="color:#000; font-size: 3rem">饮食</h2>
     </div>
 </section>
 
 
 <section>
 <div class="container">
-    <div class="col-lg-12 col-lg-6 word pt-60">
+    <div class="col-lg-12 col-lg-6 word">
         <p>在住处休憩片刻，就可以出门来一顿正宗的淄博烧烤啦。
             以在市场监管部门办理营业执照的数量统计，截至 4 月中旬，淄博全市有 1270 多家烧烤店；
             截至 5 月 8 日，淄博市新增烧烤相关企业 735 家。
@@ -1085,184 +1133,171 @@
 </div>
 </section>
 
+<section class="pt-20" style="background-color: #fff;">
+
+    <div class="container" style="display: flex; justify-content: center; align-items: center;">
+        <div class="row resourse">
+            <div class="juzhong">
+                <!-- <span>图9：餐桌需求量和用电量之间的关系</span> -->
+                    <!-- 酒店钻级分布 -->
+                    <div id="ele_demand" style="width: 650px;height: 600px;border: 0 solid;"></div>
+                    <script type="text/javascript">
+                    var chart9 = echarts.init(document.getElementById('ele_demand'));
+                
+                    const colors = ['#5470C6', '#EE6666'];
+                    var option = {
+                        title: {
+                            text: '图9：餐桌需求量和用电量之间的关系',
+                            subtext: '数据来源：康山烧烤店报告',
+                            left:'right'
+                        },
+                        color: colors,
+                        tooltip: {
+                            trigger: 'none',
+                            axisPointer: {
+                                type: 'cross'
+                            }
+                        },
+                        legend: {
+                            orient: 'vertical',
+                            left:'left',
+                        },
+                        grid: {
+                            top: 70,
+                            bottom: 50
+                        },
+                        xAxis: [{
+                                type: 'category',
+                                axisTick: {
+                                    alignWithLabel: true
+                                },
+                                axisLine: {
+                                    onZero: false,
+                                    lineStyle: {
+                                        color: colors[0]
+                                    }
+                                },
+                                axisPointer: {
+                                    label: {
+                                        formatter: function(params) {
+                                            return (
+                                                params.value + '年烤店桌位需求数量  ' +
+                                                // params.value +
+                                                (params.seriesData.length ? '：' + params.seriesData[0].data : '')
+                                            );
+                                        }
+                                    }
+                                },
+                                data: ['2021', '2022', '2023-04']
+                            },
+                            {
+                                type: 'category',
+                                axisTick: {
+                                    alignWithLabel: true
+                                },
+                                axisLine: {
+                                    onZero: false,
+                                    lineStyle: {
+                                        color: colors[1]
+                                    }
+                                },
+                                axisPointer: {
+                                    label: {
+                                        formatter: function(params) {
+                                            return (
+                                                params.value + '年烧烤店用电量 ' +
+                                                (params.seriesData.length ? '：' + params.seriesData[0].data + "(千瓦时)" : '')
+                                            );
+                                        }
+                                    }
+                                },
+                                data: ['2018', '2020', '2022', '2023-04']
+                            }
+                        ],
+                        yAxis: [{
+                                type: 'value',
+                                axisLine: {
+                                    lineStyle: {
+                                        color: colors[0]
+                                    }
+                                }
+                            },
+                            {
+                                type: 'value',
+                                splitLine: {
+                                    show: false
+                                },
+                                axisLine: {
+                                    lineStyle: {
+                                        color: colors[1]
+                                    }
+                                }
+                            }
+                        ],
+                        series: [{
+                                name: '烧烤店桌位需求数量',
+                                type: 'line',
+                                xAxisIndex: 0,
+                                yAxisIndex: 0,
+                                smooth: true,
+                                emphasis: {
+                                    focus: 'series'
+                                },
+                                data: [53, 62, 203]
+                            },
+                            {
+                                name: '烧烤店用电量（千瓦时）',
+                                type: 'line',
+                                xAxisIndex: 1,
+                                yAxisIndex: 1,
+                                smooth: true,
+                                emphasis: {
+                                    focus: 'series'
+                                },
+                                data: [1200, 1800, 2200, 3350]
+                            }
+                        ]
+                    };
+                
+                    option && chart9.setOption(option);
+                    </script>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section>
     <div class="container">
-        <div class="col-lg-12 col-lg-6 word pt-60">
+        <div class="col-lg-12 col-lg-6 word">
             <p>浙江大学国际联合商学院数字经济与金融创新研究中心联席主任、研究员盘和林指出，与一些其他城市的代表美食相比，淄博烧烤还多了一份独特的“人间烟火气”。
                 将这份“人间烟火气”与淄博政府推出的一系列游客就餐环境优化举措相结合，淄博烧烤热度再次攀升，烧烤店前大排长龙的场景，成为了淄博 3-4 月以来的常态。</p>
         </div>
     </div>
 </section>
 
-<section class="pt-120 pb-60" style="background-color: #fff;">
-    <div class=" ">
-        <div class="word" style="color: #000">
-            <p>我们对淄博地区的餐桌需求量以及用电量进行了统计，可视化结果如图9所示。</p>
-        </div>
-    </div>
 
-        <div class="container">
-            <div class="row resourse pb-60">
-                <div class="'pb-60 juzhong">
-                    <span>图9：餐桌需求量和用电量之间的关系</span>
-                        <!-- 酒店钻级分布 -->
-                        <div id="ele_demand" style="width: 1200px;height: 600px;border: 0 solid;"></div>
-                        <script type="text/javascript">
-                        var chart9 = echarts.init(document.getElementById('ele_demand'));
-                    
-                        const colors = ['#5470C6', '#EE6666'];
-                        var option = {
-                            color: colors,
-                            tooltip: {
-                                trigger: 'none',
-                                axisPointer: {
-                                    type: 'cross'
-                                }
-                            },
-                            legend: {},
-                            grid: {
-                                top: 70,
-                                bottom: 50
-                            },
-                            xAxis: [{
-                                    type: 'category',
-                                    axisTick: {
-                                        alignWithLabel: true
-                                    },
-                                    axisLine: {
-                                        onZero: false,
-                                        lineStyle: {
-                                            color: colors[0]
-                                        }
-                                    },
-                                    axisPointer: {
-                                        label: {
-                                            formatter: function(params) {
-                                                return (
-                                                    params.value + '年烤店桌位需求数量  ' +
-                                                    // params.value +
-                                                    (params.seriesData.length ? '：' + params.seriesData[0].data : '')
-                                                );
-                                            }
-                                        }
-                                    },
-                                    data: ['2021', '2022', '2023-04']
-                                },
-                                {
-                                    type: 'category',
-                                    axisTick: {
-                                        alignWithLabel: true
-                                    },
-                                    axisLine: {
-                                        onZero: false,
-                                        lineStyle: {
-                                            color: colors[1]
-                                        }
-                                    },
-                                    axisPointer: {
-                                        label: {
-                                            formatter: function(params) {
-                                                return (
-                                                    params.value + '年烧烤店用电量 ' +
-                                                    (params.seriesData.length ? '：' + params.seriesData[0].data + "(千瓦时)" : '')
-                                                );
-                                            }
-                                        }
-                                    },
-                                    data: ['2018', '2020', '2022', '2023-04']
-                                }
-                            ],
-                            yAxis: [{
-                                    type: 'value',
-                                    axisLine: {
-                                        lineStyle: {
-                                            color: colors[0]
-                                        }
-                                    }
-                                },
-                                {
-                                    type: 'value',
-                                    splitLine: {
-                                        show: false
-                                    },
-                                    axisLine: {
-                                        lineStyle: {
-                                            color: colors[1]
-                                        }
-                                    }
-                                }
-                            ],
-                            series: [{
-                                    name: '烧烤店桌位需求数量',
-                                    type: 'line',
-                                    xAxisIndex: 0,
-                                    yAxisIndex: 0,
-                                    smooth: true,
-                                    emphasis: {
-                                        focus: 'series'
-                                    },
-                                    data: [53, 62, 203]
-                                },
-                                {
-                                    name: '烧烤店用电量（千瓦时）',
-                                    type: 'line',
-                                    xAxisIndex: 1,
-                                    yAxisIndex: 1,
-                                    smooth: true,
-                                    emphasis: {
-                                        focus: 'series'
-                                    },
-                                    data: [1200, 1800, 2200, 3350]
-                                }
-                            ]
-                        };
-                    
-                        option && chart9.setOption(option);
-                        </script>
-                </div>
+
+<div class="container" style="display: flex;justify-content: center;align-items: center;">
+    <div class=" ">
+        <div style="margin-left: 20px; display: flex; flex: 1 1 0%; flex-direction: row; overflow-x: auto; margin-top: 10px;">
+            <div>
+                <img src="assets/images/roast_2.png" style="margin-right: 40px; width: 210px; height: 280px;">
+            </div>
+            <div>
+                <img src="assets/images/roast_3.png" style="margin-right: 40px; width: 210px; height: 280px;">
+            </div>
+            <div>
+                <img src="assets/images/roast_4.png" style="margin-right: 40px; width: 210px; height: 280px;">
             </div>
         </div>
-</section>
-
+    </div>
+</div>
 
 <section>
-    <div class="container">
-        <!-- Carousel 轮播图-->
-        <div id="demo" class="carousel slide" data-ride="carousel" data-interval="3000">
-
-            <!-- Indicators -->
-            <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
-
-            <!-- Slideshow images -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/images/roast_2.png" alt="Image 1" width="1100" height="700">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/images/roast_3.png" alt="Image 2" width="1100" height="700">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/images/roast_4.png" alt="Image 3" width="1100" height="700">
-                </div>
-            </div>
-
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
-        </div>
+    <div class="pt-120">
+        
     </div>
 </section>
-
-
 
 
 

@@ -61,21 +61,18 @@
                             <div>
                                 <a href="javascript:;" id="icon-dian"> <i class="iconfont icon-dian" style="font-size: 40px; color: #000;line-height: 1; "></i></a>
                                 <ul class="menu " >
-                                    <li>
-                                        <a href="index.html ",style="font-size: 14px;">首页：淄博的潮起潮落</a>
-                                    </li>
                                     <li class="menu-separator "></li>
                                     <li>
-                                        <a href="part-1.html ", style="font-size: 12px;">01：人工智能做旅游攻略</a>
+                                        <a href="part-1.html ", style="font-size: 12px;">人工智能做旅游攻略</a>
                                     </li>
                                     <li>
-                                        <a href="part-2.html ", style="font-size: 12px;">02：热潮的回落</a>
+                                        <a href="part-2.html ", style="font-size: 12px;">热潮的回落</a>
                                     </li>
                                     <li>
-                                        <a href="part-3.html ", style="font-size: 12px;">03：网红城市的热度消散</a>
+                                        <a href="part-3.html ", style="font-size: 12px;">网红城市的热度消散</a>
                                     </li>
                                     <li>
-                                        <a href="part-4.html ", style="font-size: 12px;">04：冷思考</a>
+                                        <a href="part-4.html ", style="font-size: 12px;">冷思考</a>
                                     </li>
                                 </ul>
                             </div>
@@ -124,7 +121,7 @@
     }}'>
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="transition-duration: 2000ms;">
-                <div class="image-layer" style="background-image: linear-gradient(to top, rgb(0, 0, 0), transparent), url('assets/images/热潮回落_封面.png');background-position: center;"></div>
+                <div class="image-layer" style="background-image: linear-gradient(to top, rgb(0, 0, 0), transparent), url('assets/images/八大局便民市场人流回落.png');background-position: center;"></div>
                 <!-- /.image-layer -->
                     <div class="container">
                         <div class="row justify-content-start">
@@ -148,10 +145,10 @@
         </div>
 </section>
 
-<section class="page-header">
-    <div class="page-header__bg" style="background-color: #ffebcd; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(assets/images/烧烤店转让_h2.png);background-repeat: no-repeat;background-position: center center;"></div>
-    <div class="container text-center pt-20 pb-120">
-        <h2 style="display: inline-block;">大批烧烤店转让</h2>
+<section class="container">
+    <!-- <div class="page-header__bg" style="background-color: #ffebcd; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(assets/images/烧烤店转让_h2.png);background-repeat: no-repeat;background-position: center center;"></div> -->
+    <div class="col-lg-12 col-lg-6 text-left">
+        <h2 style="color: #000;margin-top:12px;font-size: 3rem;">大批烧烤店转让</h2>
     </div>
 </section>
 
@@ -174,19 +171,19 @@
 </section>
 
 
-<section class="pt-120 pb-60" style="background-color: #fff;">
+<section class="" style="background-color: #fff;">
     <div class=" ">
         <div class="word" style="color: #000">
             <p> </p>
         </div>
     </div>
 
-        <div class="container">
-            <div class="row resourse pb-60">
-                <div class="'pb-60 juzhong">
-                    <span>图10：各区烧烤店转让数量</span>
+        <div class="container" style="display: flex; justify-content: center; align-items: center;">
+            <div class="row resourse pt-30">
+                <div class="juzhong">
+                    <!-- <span>图10：各区烧烤店转让数量</span> -->
                         <!-- 酒店钻级分布 -->
-                        <div id="transfer_pie" style="width: 1200px;height: 600px;border: 0 solid;"></div>
+                        <div id="transfer_pie" style="width: 500px;height: 650px;border: 0 solid;"></div>
                         <script type="text/javascript">
                         // 初始化图表时设置style
                         var chart10 = echarts.init(document.getElementById('transfer_pie'));
@@ -194,14 +191,16 @@
                     
                         var option = {
                             title:{
-                                text: '淄博市烧烤店转让数量地理分布',
+                                text: '图1：淄博市烧烤店转让数量地理分布',
                                 subtext: '数据来源：58同城',
+                                left: 'right',
                             },
                             legend: {
                                 top: 'bottom'
                             },
                             toolbox: {
-                                show: true,
+                                left:'left',
+                                show: false,
                                 feature: {
                                 mark: { show: true },
                                 dataView: { show: true, readOnly: false },
@@ -239,18 +238,18 @@
         </div>
 </section>
 
-<section class="pt-120 pb-60" style="background-color: #fff;">
+<section class="" style="background-color: #fff;">
     <div class=" ">
         <div class="word" style="color: #000">
             <p> </p>
         </div>
     </div>
 
-        <div class="container">
-            <div class="row resourse pb-60">
-                <div class="'pb-60 juzhong">
-                    <span>图11：各区烧烤店平均转让成本（单位：元/m^2）</span>
-                    <div id="transfer_cost" style="width: 1200px;height: 600px;border: 0 solid;"></div>
+        <div class="container" style="display: flex; justify-content: center; align-items: center;">
+            <div class="row resourse">
+                <div class="juzhong pt-10 pb-120">
+                    <!-- <span>图2：各区烧烤店平均转让成本（单位：元/m^2）</span> -->
+                    <div id="transfer_cost" style="width: 650px; height: 650px;border: 0 solid;"></div>
                     <script type="text/javascript">
                     // 初始化图表时设置style
                     var chart11 = echarts.init(document.getElementById('transfer_cost'));
@@ -262,7 +261,7 @@
                         echarts.registerMap('zibo', zibo);
                         var option = {
                             title: {
-                            text: '淄博市烧烤店平均转让费用地理分布',
+                            text: '图2：各区烧烤店平均转让成本（单位：元/m^2）',
                             subtext: '数据来源：58同城',
                             sublink: 'https://data.sd.gov.cn/portal/search/index?Q=%E6%B7%84%E5%8D%9A&searchType=0',
                             left: 'right'
@@ -295,7 +294,7 @@
                             calculable: true
                             },
                             toolbox: {
-                            show: true,
+                            show: false,
                             //orient: 'vertical',
                             left: 'left',
                             top: 'top',
@@ -321,6 +320,7 @@
                             ]
                         };
                         chart11.setOption(option);
+                        chart11.resize();
                         });
                     });    
                     
@@ -330,10 +330,10 @@
         </div>
 </section>
 
-<section class="page-header">
-    <div class="page-header__bg" style="background-color: #ffebcd;; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/八大局便民市场人流回落.png); background-repeat: no-repeat;background-position: center;"></div>
-    <div class="container text-center pt-20 pb-120">
-        <h2 style="display: inline-block;">八大局便民市场的人流回落</h2>
+<section class="container">
+    <!-- <div class="page-header__bg" style="background-color: #ffebcd;; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/八大局便民市场人流回落.png); background-repeat: no-repeat;background-position: center;"></div> -->
+    <div class="col-lg-12 col-lg-6 text-left">
+        <h2 style="color: #000;margin-top:12px;font-size: 3rem;">八大局便民市场的人流回落</h2>
     </div>
 </section>
 
@@ -352,37 +352,50 @@
     </div>
 </section>
 
-<section class="enent-details pt-120 pb-120" style="background: url(assets/images/书法_背景_1.png) no-repeat; background-color: transparent; background-position: 10%; background-size:50%">
-    <div class="container">
-        <div class=" ">
-            <div class="word pt-60">
-                <p style="margin-left: 70%;">
-                    除了美食小吃，可以看到八大局还开设了一个专门的书画苑，基本都是当地的艺术工作者现场作画、写字，在淄博当地比较盛行。大厅内的摊位很多，但人流量很少。
-                    据摊主介绍，五六月份时的书画大厅里可以说是人满为患，现在则是门可罗雀。
-                </p>
+<div class="container" style="display: flex;justify-content: center;align-items: center;">
+    <div class=" ">
+        <div style="margin-left: 20px; display: flex; flex: 1 1 0%; flex-direction: row; overflow-x: auto; margin-top: 10px;">
+            <div>
+                <img src="assets/images/书法_背景_1.png" style="margin-right: 40px; width: 300px; height: 220px;">
             </div>
+            <div>
+                <img src="assets/images/书法_背景_2.png" style="margin-right: 40px; width: 300px; height: 220px;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <div class="container">
+        <div class="col-lg-12 col-lg-6 word pt-60">
+            <p>
+                除了美食小吃，可以看到八大局还开设了一个专门的书画苑，基本都是当地的艺术工作者现场作画、写字，在淄博当地比较盛行。大厅内的摊位很多，但人流量很少。
+                    据摊主介绍，五六月份时的书画大厅里可以说是人满为患，现在则是门可罗雀。
+            </p>
         </div>
     </div>
 </section>
 
 
-<div class="container" style="display: flex;justify-content: center;align-items: center;">
+
+
+<div class="container" style="width: 680px;">
         <div class=" ">
             <div style="margin-left: 20px; display: flex; flex: 1 1 0%; flex-direction: row; overflow-x: auto; margin-top: 10px;">
                 <div>
-                    <img src="assets/images/书法_3.png" style="margin-right: 40px; width: 268px; height: 484px;">
+                    <img src="assets/images/书法_3.png" style="margin-right: 40px; width: 210px; height: 280px;">
                 </div>
                 <div>
-                    <img src="assets/images/书法_4.png" style="margin-right: 40px; width: 268px; height: 484px;">
+                    <img src="assets/images/书法_4.png" style="margin-right: 40px; width: 210px; height: 280px;">
                 </div>
                 <div>
-                    <img src="assets/images/书法_5.png" style="margin-right: 40px; width: 268px; height: 484px;">
+                    <img src="assets/images/书法_5.png" style="margin-right: 40px; width: 210px; height: 280px;">
                 </div>
                 <div>
-                    <img src="assets/images/书法_6.png" style="margin-right: 40px; width: 268px; height: 484px;">
+                    <img src="assets/images/书法_6.png" style="margin-right: 40px; width: 210px; height: 280px;">
                 </div>
                 <div>
-                    <img src="assets/images/书法_7.png" style="margin-right: 40px; width: 268px; height: 484px;">
+                    <img src="assets/images/书法_7.png" style="margin-right: 40px; width: 210px; height: 280px;">
                 </div>
             </div>
         </div>
@@ -402,11 +415,13 @@
 </section>
 
 
-<section class="page-header">
-    <div class="page-header__bg" style="background-color: #ffebcd;; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/不再拥挤的车流_封面.png); background-repeat: no-repeat;background-position: center;"></div>
-    <div class="container text-center pt-20 pb-120">
-        <h2 style="display: inline-block;">不再拥挤的车流</h2>
+<section class="container">
+    <div class=" ">
+    <!-- <div class="page-header__bg" style="background-color: #ffebcd;; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/不再拥挤的车流_封面.png); background-repeat: no-repeat;background-position: center;"></div> -->
+    <div class="col-lg-12 col-lg-6 text-left">
+        <h2 style="color: #000; margin-top: 12px; font-size: 3rem;">不再拥挤的车流</h2>
     </div>
+</div>
 </section>
 
 
@@ -419,7 +434,7 @@
                 假期五天淄博站客发量分别为 41279、46697、53924、53001、45351 人次。合计 240252 人次，旅客到达量 240934 人次。全市投入城市公交 6.48 万班次运送乘客 186.2 万人次，各长途客运站累计运输旅客 7.82 万人次。
             </p>
             <p>
-                现如今，随着人流的减弱，车流也变得不那么拥挤，五一过后，淄博各公共交通系统数据呈现总体回落，淄博出租车和网约车的订单数量和日单数逐渐回落。
+                现如今，<span style="font-weight: bold; color:#df0000">随着人流的减弱，车流也变得不那么拥挤，</span>五一过后，淄博各公共交通系统数据呈现总体回落，淄博出租车和网约车的订单数量和日单数逐渐回落。
                 据滴滴出行提供的数据显示，淄博 4 月以来打车需求持续上涨，4 月 22 日通过滴滴呼叫网约车、出租车的打车需求同比去年上涨 258%
             </p>
             <p>
@@ -428,6 +443,7 @@
             </p>
             <p>
                 <span style="font-weight: bold; color:#df0000">“不过淄博现在全国人民都知道了也是很不容易了，”</span>
+                <!-- <span style="font-weight: bold; color:#8e1414">jdfkjsakfjklasdjf</span> -->
                 刘师傅很欣慰的笑了，
                 <span style="font-weight: bold; color:#df0000">“淄博不是一个旅游城市，能火成这样老百姓和政府都尽力了。以前的时候都不知道淄博是哪里，现在叫全国的人都能知道淄博烧烤了，就已经很不错的了！我们知道这些都是有始有终的，不可能永远那么红火的。”</span>
             </p>
@@ -435,26 +451,28 @@
     </div>
 </section>
 
-<section class="page-header">
-    <div class="page-header__bg" style="background-color: #ffebcd;; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/淄博潮起潮落中的“贝壳”_封面.png); background-repeat: no-repeat;background-position: center;"></div>
-    <div class="container text-center pt-20 pb-120">
-        <h2 style="display: inline-block;">淄博潮起潮落中的“贝壳”</h2>
+<section class="container">
+    <div class=" ">
+    <!-- <div class="page-header__bg" style="background-color: #ffebcd;; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/淄博潮起潮落中的“贝壳”_封面.png); background-repeat: no-repeat;background-position: center;"></div> -->
+    <div class="col-lg-12 col-lg-6 text-left">
+        <h2 style="color:#000; margin-top: 60px; font-size: 3rem;">淄博潮起潮落中的“贝壳”</h2>
     </div>
+</div>
 </section>
 
-<section>
-    <div class="container">
-        <div class="col-lg-12 col-lg-6 word pt-60">
-            <p>
+<section style="background-color: #242323;">
+    <div class="container" style="margin-top: 50px;">
+        <div class="col-lg-12 col-lg-6 word pt-60 pb-60">
+            <p style="color:#fff">
                 彭姐是淄博本地人，她经营的“兴华原味烧烤店”在淄博网红打卡地八大局周边。店面原来是经营体育用品的商店，随着淄博烧烤的爆火，她便把店面改为烧烤店。但门面上目前还保留着之前“多威体育”的招牌。彭姐介绍说，<span style="font-weight: bold; color:#df0000">现在和最火的 5 月份相比，客流少了将近三分之二。</span></p>
-            <p>
+            <p style="color:#fff">
                 彭姐介绍，八大局周边都是老城区，以前是市中心。这里相较于其他地方人流量还是很密集的。现在晚上来这里吃烧烤的大部分是外地车辆，都想来感受一下淄博烧烤的氛围。到现在八大局周边的停车场都是免费的，方便外地游客在此地停车休息。4、5 月份的时候人都是挤不动的，淄博人民很热情，看到外地游客来了都主动让位置。
                 客流虽然很多但淄博烧烤的价格一直没有涨价，保持着 2.5-2.9 一串。像牧羊村这些传统的烧烤店，没有扫码点餐，都是给顾客一张纸质菜单，如果顾客看到价格不合适可以直接走。
             </p>
-            <p>
+            <p style="color:#fff">
                 谈到营业时间，彭姐介绍说,<span style="font-weight: bold; color:#df0000">“我们一般营业到十点钟左右，淄博烧烤火爆的时候能到凌晨还有顾客。”</span>彭姐的店面不大，一共 15 张桌，从晚上六点到十点，基本都能保持满座。5 月份最忙碌的时候，当时店里面的服务员都是外面雇来的。现在学生们逐渐开学了，客流变少了，店里面就是家人帮帮忙了。
             </p>
-            <p>
+            <p style="color:#fff">
                 彭姐最后感慨：<span style="font-weight: bold; color:#df0000">“现在淄博烧烤这么火，多亏了市政府引导的好。疫情三年老百姓都想趁着这次难得的机会挣点钱。没有政府的帮助和引导，我们在室外摆上烧烤摊也不可能实现。
                     因为政府有所作为，才让我们这种经营小本生意的和外地来的游客都省心。”</span>
             </p>
@@ -479,7 +497,11 @@
     </div>
 </section>
 
-
+<section>
+    <div class="pt-120">
+        
+    </div>
+</section>
 
 </div>
 

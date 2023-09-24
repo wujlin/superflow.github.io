@@ -44,7 +44,34 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/bmap.js"></script>
     <script src="https://api.map.baidu.com/getscript?v=3.0&ak=KOmVjPVUAey1G2E8zNhPiuQ6QiEmAwZu&services=&t=20200327103013"></script>
+    <style type="text/css">
+        @font-face {
+            font-family: 'zitiao';
+            src: url('./assets/fonts/ZiTiao.ttf');
+        }
 
+        h2 {
+            font-family: "zitiao";
+        }
+
+        .ec-extension-bmap {position: absolute; width: 680px!important; height: 700px!important; overflow: hidden; 
+            background-color: rgb(243, 241, 236); color: rgb(0, 0, 0); 
+            text-align: left; z-index: 0;left: 35%!important}
+
+        /* 选择含有_cid属性的span元素 */
+        span[_cid] {
+        /* 将其显示属性设置为none，即隐藏 */
+        display: none!important;
+        }
+
+
+        /* 选择class为anchorBL的div元素 */
+        div.anchorBL {
+        /* 将其显示属性设置为none，即隐藏 */
+        display: none!important;
+        }
+
+    </style>
 </head>
 
 <body style="height: 100%; margin: 0">
@@ -62,11 +89,11 @@
                                 <a href="javascript:;" id="icon-dian"> <i class="iconfont icon-dian" style="font-size: 40px; color: #000;line-height: 1; "></i></a>
                                 <ul class="menu " >
                                     <li>
-                                        <a href="index.html ",style="font-size: 14px;">淄博的潮起潮落</a>
+                                        <a href="index.html",style="font-size: 14px;">淄博的潮起潮落</a>
                                     </li>
                                     <li class="menu-separator "></li>
                                     <li>
-                                        <a href="index.html ", style="font-size: 12px;">人工智能做旅游攻略</a>
+                                        <a href="part-1.html", style="font-size: 12px;">人工智能做旅游攻略</a>
                                     </li>
                                     <li>
                                         <a href="part-2.html ", style="font-size: 12px;">热潮的回落</a>
@@ -112,7 +139,7 @@
 
 <!-- 放入背景图片和标题 -->
 <section class="main-slider">
-    <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
+    <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": false,
     "effect": "fade",
     "pagination": {
         "el": "#main-slider-pagination",
@@ -128,8 +155,13 @@
                 <!-- /.image-layer -->
                     <div class="container">
                         <div class="row justify-content-start">
+                            <div class="col-xl-12 col-lg-12 text-left" style="margin-top: -100px">
+                                <h1 style="color: #fff; margin-top: -100px;">热潮的回落</h1>
+                            </div>
                             <div class="col-xl-12 col-lg-12 text-left">
-                                <h1 style="color: #fff; margin-top: 12px;">热潮的回落</h1>
+                                <h3 style="color: #fff; margin-top:10px; font-size: 2rem;">
+                                    淄博在今年五一假期期间冲上热度顶峰，纷至沓来的游客像是在参加某场狂欢，热情充斥在街头巷尾，像烧烤炉里燃烧的炭。<span style="font-size: 2rem;font-weight:bold;color:#ffa900;">时隔数月，淄博烧烤热情虽有，但热度不再如昨。</span>
+                7 月的淄博伴随着高温与暑热，与逐渐降温下来的淄博烧烤形成了鲜明的对比。</h3>
                             </div>
                         </div>
                     </div>
@@ -140,13 +172,6 @@
 </section>
 
 
-<section>
-    <div class="container">
-        <div class="col-lg-6 col-lg-12 word pt-60">
-            <p> 淄博在今年五一假期期间冲上热度顶峰，纷至沓来的游客像是在参加某场狂欢，热情充斥在街头巷尾，像烧烤炉里燃烧的炭。<span style="fond-weight:bold;color:#ffa900;">时隔数月，淄博烧烤热情虽有，但热度不再如昨。</span>
-                7 月的淄博伴随着高温与暑热，与逐渐降温下来的淄博烧烤形成了鲜明的对比。</p>
-        </div>
-</section>
 
 <section class="container">
     <!-- <div class="page-header__bg" style="background-color: #ffebcd; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(assets/images/烧烤店转让_h2.png);background-repeat: no-repeat;background-position: center center;"></div> -->
@@ -162,12 +187,12 @@
 <section>
     <div class="container">
         <div class="col-lg-12 col-lg-6 word pt-60">
-            <p>7 月份以来，<span style="fond-weight:bold;color:#ffa900;">烧烤店转让数量为 122 家</span>知名网红烧烤店的翻桌数也从火热时期的日均 178 桌降至当前约 120 桌。
+            <p>7 月份以来，<span style="font-weight:bold;color:#ffa900;">烧烤店转让数量为 122 家</span>知名网红烧烤店的翻桌数也从火热时期的日均 178 桌降至当前约 120 桌。
                 热潮的回落，首当其冲出现的就是多家烧烤店面的转让。
                 在 2023 年 7 月 1 日以来，58 同城网站上出现了数百条淄博烧烤店铺转让信息，其中不少店铺都具有新开业、新装修和新设备等特点。自今年 7 月份以来，发布的烧烤店铺转让信息达 122 家，主要分布于淄博张店区。
-                其中按照平均转让费从高到低排布分别为：<span style="fond-weight:bold;color:#ffa900;">临淄区、张店区和高青县</span>。</p>
+                其中按照平均转让费从高到低排布分别为：<span style="font-weight:bold;color:#ffa900;">临淄区、张店区和高青县</span>。</p>
             <p style="font-weight: bold;color: #ffa900;">
-                当地烧烤店老板：“倒闭的大多是此前蹭热度开的新店”
+                当地烧烤店老板：“倒闭的大多是此前蹭热度开的新店?”
             </p>  
         </div>
     </div>
@@ -186,7 +211,7 @@
                 <div class="juzhong">
                     <!-- <span>图10：各区烧烤店转让数量</span> -->
                         <!-- 酒店钻级分布 -->
-                        <div id="transfer_pie" style="width: 500px;height: 650px;border: 0 solid;"></div>
+                        <div id="transfer_pie" style="width: 700px;height: 650px;border: 0 solid;"></div>
                         <script type="text/javascript">
                         // 初始化图表时设置style
                         var chart10 = echarts.init(document.getElementById('transfer_pie'));
@@ -194,12 +219,18 @@
                     
                         var option = {
                             title:{
-                                text: '图1：淄博市烧烤店转让数量地理分布',
-                                subtext: '数据来源：58同城',
-                                left: 'right',
+                                text: '图10：淄博市烧烤店转让数量地理分布',
+                                left: 'center',
+                                top: 'top',
+                                textStyle:{
+                                    fontSize: '24px',
+                                    fontWeight: 'bolder',
+                                    color: '#6d6b6c',
+                                    fontFamily: 'sans-serif'
+                            }
                             },
                             legend: {
-                                top: 'bottom'
+                                top: 'bottom',
                             },
                             toolbox: {
                                 left:'left',
@@ -236,6 +267,7 @@
                         
                         option && chart10.setOption(option);
                         </script>
+                    <p style="font-size: 13px!important; color: #a0a3a4!important">数据来源： 58同城。</p>
                 </div>
             </div>
         </div>
@@ -264,10 +296,15 @@
                         echarts.registerMap('zibo', zibo);
                         var option = {
                             title: {
-                            text: '图2：各区烧烤店平均转让成本（单位：元/m^2）',
-                            subtext: '数据来源：58同城',
-                            sublink: 'https://data.sd.gov.cn/portal/search/index?Q=%E6%B7%84%E5%8D%9A&searchType=0',
-                            left: 'right'
+                            text: '图11：各区烧烤店平均转让成本（单位：元/每平方米）',
+                            left: 'center',
+                            top: 'top',
+                            textStyle:{
+                                fontSize: '24px',
+                                fontWeight: 'bolder',
+                                color: '#6d6b6c',
+                                fontFamily: 'sans-serif'
+                            }
                             },
                             tooltip: {
                             trigger: 'item',
@@ -328,6 +365,7 @@
                     });    
                     
                     </script>
+                    <p >数据来源： 58同城。</p>
                 </div>
             </div>
         </div>
@@ -344,7 +382,7 @@
     <div class="container">
         <div class="col-lg-12 col-lg-6 word pt-60">
             <p>
-                淄博人眼中不起眼的<span style="fond-weight:bold;color:#ffa900;">八大局菜市场</span>，在热度高峰时期，一天的浏览量曾高达 10 万人次。
+                淄博人眼中不起眼的<span style="font-weight:bold;color:#ffa900;">八大局菜市场</span>，在热度高峰时期，一天的浏览量曾高达 10 万人次。
                 但如今虽仍有游客慕名而来、拍照纪念，但门头上的电子屏已不再显示“游客数量”。</p>
             <p>
                 八大局作为淄博地区有代表性的旅游地点，人流量相较于其他地方还是很密集的。
@@ -400,10 +438,11 @@
                 <div>
                     <img src="assets/images/书法_7.png" style="margin-right: 40px; width: 210px; height: 280px;">
                 </div>
+                <!-- 添加一行浅灰色小字 --> 
             </div>
         </div>
 </div>
-
+<div style="text-align: center; color: #999999; font-size: 12px;">滑动查看更多图片</div>
 
 <section>
     <div class="container">
@@ -437,7 +476,7 @@
                 假期五天淄博站客发量分别为 41279、46697、53924、53001、45351 人次。合计 240252 人次，旅客到达量 240934 人次。全市投入城市公交 6.48 万班次运送乘客 186.2 万人次，各长途客运站累计运输旅客 7.82 万人次。
             </p>
             <p>
-                现如今，<span style="font-weight: bold; color:#df0000">随着人流的减弱，车流也变得不那么拥挤，</span>五一过后，淄博各公共交通系统数据呈现总体回落，淄博出租车和网约车的订单数量和日单数逐渐回落。
+                现如今，<span style="font-weight: bold; color:#ffa900">随着人流的减弱，车流也变得不那么拥挤，</span>五一过后，淄博各公共交通系统数据呈现总体回落，淄博出租车和网约车的订单数量和日单数逐渐回落。
                 据滴滴出行提供的数据显示，淄博 4 月以来打车需求持续上涨，4 月 22 日通过滴滴呼叫网约车、出租车的打车需求同比去年上涨 258%
             </p>
             <p>
@@ -445,7 +484,7 @@
                 对于人流减少的原因，刘师傅认为主要有两点：一是学生们要开学了；二是随着天气逐渐转凉，坐在室外吃烧烤的人也渐渐减少了。预计十一假期结束之后，人流会更少。
             </p>
             <p>
-                <span style="font-weight: bold; color:#df0000">“不过淄博现在全国人民都知道了也是很不容易了，”</span>
+                <span style="font-weight: bold; color:#ffa900">“不过淄博现在全国人民都知道了也是很不容易了，”</span>
                 <!-- <span style="font-weight: bold; color:#8e1414">jdfkjsakfjklasdjf</span> -->
                 刘师傅很欣慰的笑了，
                 <span style="font-weight: bold; color:#ffa900">“淄博不是一个旅游城市，能火成这样老百姓和政府都尽力了。以前的时候都不知道淄博是哪里，现在叫全国的人都能知道淄博烧烤了，就已经很不错的了！我们知道这些都是有始有终的，不可能永远那么红火的。”</span>
@@ -454,18 +493,18 @@
     </div>
 </section>
 
-<section class="container">
-    <div class=" ">
-    <!-- <div class="page-header__bg" style="background-color: #ffebcd;; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/淄博潮起潮落中的“贝壳”_封面.png); background-repeat: no-repeat;background-position: center;"></div> -->
-    <div class="col-lg-12 col-lg-6 text-left">
-        <h2 style="color:#000; margin-top: 60px; font-size: 3rem;">淄博潮起潮落中的“贝壳”</h2>
-    </div>
-</div>
-</section>
 
-<section style="background-color: #242323;">
-    <div class="container" style="margin-top: 50px;">
-        <div class="col-lg-12 col-lg-6 word pt-60 pb-60">
+<section style="background-color: #a0a3a4;">
+    <section class="container pt-20">
+        <div class=" ">
+        <!-- <div class="page-header__bg" style="background-color: #ffebcd;; background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/淄博潮起潮落中的“贝壳”_封面.png); background-repeat: no-repeat;background-position: center;"></div> -->
+        <div class="col-lg-12 col-lg-6 text-left">
+            <h2 style="color:#000; margin-top: 60px; font-size: 3rem;">淄博潮起潮落中的“贝壳”</h2>
+        </div>
+    </div>
+    </section>
+    <div class="container" style="margin-top: 20px;">
+        <div class="col-lg-12 col-lg-6 word pt-20 pb-60">
             <p style="color:#fff">
                 彭姐是淄博本地人，她经营的“兴华原味烧烤店”在淄博网红打卡地八大局周边。店面原来是经营体育用品的商店，随着淄博烧烤的爆火，她便把店面改为烧烤店。但门面上目前还保留着之前“多威体育”的招牌。彭姐介绍说，<span style="font-weight: bold; color:#df0000">现在和最火的 5 月份相比，客流少了将近三分之二。</span></p>
             <p style="color:#fff">
@@ -494,15 +533,21 @@
                 一个城市靠单一产业是发展不下去的，只有联动其他产业，协同发展才能行稳致远。当地文旅局在进一步开发淄博的优质文化旅游资源，打造高质量的文旅活动，努力做到“吸引来游客、留得住游客”。
             </p>
             <p>
-                 <span style="font-weight: bold; color:#ffa900">“网红城市想要发展绝不是一群人的短暂狂欢，而应该是热闹非凡后的余韵悠长。”</span>
+                 <span style="font-weight: bold; color:#ffa900;font-size: 24px;">“网红城市想要发展绝不是一群人的短暂狂欢，而应该是热闹非凡后的余韵悠长。”</span>
             </p>
         </div>
     </div>
 </section>
 
 <section>
-    <div class="pt-120">
-        
+    <div class="container pt-120">
+        <div class="row justify-content-start">
+            <div class="col-xl-12 col-lg-12 text-left">
+                <a href="./part-3.html" :hover="color:#fff">
+                    <image src="./assets/images/three.png" alt> 
+                </a>
+            </div>
+        </div>
     </div>
 </section>
 

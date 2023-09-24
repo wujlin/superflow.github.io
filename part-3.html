@@ -44,7 +44,34 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/bmap.js"></script>
     <script src="https://api.map.baidu.com/getscript?v=3.0&ak=KOmVjPVUAey1G2E8zNhPiuQ6QiEmAwZu&services=&t=20200327103013"></script>
+    <style type="text/css">
+        @font-face {
+            font-family: 'zitiao';
+            src: url('./assets/fonts/ZiTiao.ttf');
+        }
 
+        h2 {
+            font-family: "zitiao";
+        }
+
+        .ec-extension-bmap {position: absolute; width: 680px!important; height: 700px!important; overflow: hidden; 
+            background-color: rgb(243, 241, 236); color: rgb(0, 0, 0); 
+            text-align: left; z-index: 0;left: 35%!important}
+
+        /* 选择含有_cid属性的span元素 */
+        span[_cid] {
+        /* 将其显示属性设置为none，即隐藏 */
+        display: none!important;
+        }
+
+
+        /* 选择class为anchorBL的div元素 */
+        div.anchorBL {
+        /* 将其显示属性设置为none，即隐藏 */
+        display: none!important;
+        }
+
+    </style>
 </head>
 
 <body style="height: 100%; margin: 0">
@@ -66,7 +93,7 @@
                                     </li>
                                     <li class="menu-separator "></li>
                                     <li>
-                                        <a href="index.html ", style="font-size: 12px;">人工智能做旅游攻略</a>
+                                        <a href="part-1.html", style="font-size: 12px;">人工智能做旅游攻略</a>
                                     </li>
                                     <li>
                                         <a href="part-2.html ", style="font-size: 12px;">热潮的回落</a>
@@ -166,16 +193,48 @@
 
                             var option = {
                                 title: {
-                                    text: '2023上半年中国网红城市排行榜',
-                                    subtext: '数据来源：鸥维数据（ovo.com.cn）'
+                                    text: '图12：2023上半年中国网红城市排行榜',
+                                    left: 'center',
+                                    top: 'top',
+                                    textStyle:{
+                                        fontSize: '24px',
+                                        fontWeight: 'bolder',
+                                        color: '#6d6b6c',
+                                        fontFamily: 'sans-serif'
+                            }
                                 },
                                 tooltip: {
                                     trigger: 'axis',
                                     axisPointer: {
                                     type: 'shadow'
-                                    }
+                                    },
+                                    formatter: function (params) {
+                                            // params是一个数组，每个元素是一个对象，包含了当前鼠标所在的数据点的信息
+                                            // 你可以根据你的需求来自定义tooltip的内容和格式
+                                            // console.log(params);
+                                            var name = params[0].axisValue; // 获取日期
+                                            var value = params[0].data; // 获取迁移指数
+                                            var color = params[0].color; // 获取颜色
+                                            // 返回一个HTML字符串，使用span标签来设置字体颜色和大小，使用margin-right来设置距离
+                                            return (
+                                            '<p style="color:' +
+                                            '#000' +
+                                            ';font-size:12px;font-weight: bold; text-align: left; margin-bottom: 16px">' +
+                                            name +
+                                            '</p>' +
+                                            //'<span style="margin-right:5px;"></span>' + // 设置距离为5px
+                                            '<p style="color:' +
+                                            '#000' +
+                                            ';font-size:14px;margin-botoom: 0px">' + '热度指数：' +
+                                            value +
+                                            '</p>'
+                                            );
+                                        }
+
                                 },
-                                legend: {},
+                                legend: {
+                                    bottom: '0',
+                                },
                                 grid: {
                                     left: '3%',
                                     right: '4%',
@@ -192,7 +251,7 @@
                                     inverse: true},
                                 series: [
                                     {
-                                    name: '2023',
+                                    name: '热度指数',
                                     type: 'bar',
                                     data: [212.46,
                                             149.42,
@@ -220,6 +279,7 @@
                                 };
                             chart1.setOption(option);
                             </script>
+                            <p>数据来源：鸥维数据（ovo.com.cn）</p>
                 </div>
             </div>
         </div>
@@ -301,9 +361,15 @@
                         
                         var option = {
                                     title: {
-                                        text: '图1：城市历年旅游人数变化',
-                                            subtext: '数据来源：厦门文化和旅游局&西安文化和旅游局',
-                                            left:'right'
+                                        text: '图13：城市历年旅游人数变化',
+                                        left: 'center',
+                                        top: 'top',
+                                        textStyle:{
+                                            fontSize: '24px',
+                                            fontWeight: 'bolder',
+                                            color: '#6d6b6c',
+                                            fontFamily: 'sans-serif'
+                                        },
                                     },
                                     tooltip: {
                                         trigger: 'axis',
@@ -312,7 +378,41 @@
                                         label: {
                                             backgroundColor: '#6a7985'
                                         }
-                                        }
+                                        },
+                                        formatter: function (params) {
+                                            // params是一个数组，每个元素是一个对象，包含了当前鼠标所在的数据点的信息
+                                            // 你可以根据你的需求来自定义tooltip的内容和格式
+                                            // console.log([params[0].color, params[1].color]);
+                                            // console.log([params[0]])
+                                            var name0 = params[0].name; // 获取酒店类型
+                                            var value0 = params[0].value; // 获取迁移指数
+                                            var color0 = params[0].color; // 获取颜色
+
+                                            var name1 = params[1].name;
+                                            var value1 = params[1].value;
+                                            var color1 = params[1].color;
+                                            // 返回一个HTML字符串，使用span标签来设置字体颜色和大小，使用margin-right来设置距离
+                                            return (
+                                            '<span style="color:' +
+                                            '#000' +
+                                            ';font-size:14px!important;font-weight: bold; text-align: left!important; margin-bottom：4px!important">' +
+                                            name0 +
+                                            '</span>' +
+                                            '<br>' +
+                                            //'<span style="margin-right:5px;"></span>' + // 设置距离为5px
+                                            '<span style="color:' +
+                                            color0 +
+                                            '!important;font-size:10px!important;margin：0">' + '淄博市酒店预订率：' +
+                                            value0 +
+                                            '</span>'+
+                                            '<br>'+
+                                            '<span style="color:' +
+                                            color1 +
+                                            '!important;font-size:10px!important;margin：0">' + '周边县市酒店预订率：' +
+                                            value1 +
+                                            '</span>' 
+                                            );
+                                        },
                                     },
                                     legend: {
                                         data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
@@ -367,6 +467,7 @@
                                     };
                                 chart1.setOption(option);
                 </script>
+                 <p>数据来源：厦门文化和旅游局&西安文化和旅游局</p>
             </div>
 
             <div class="col-md-6 juzhong">
@@ -382,9 +483,15 @@
                         
                         var option = {
                                         title: {
-                                            text: '图2：城市历年接待旅游收入',
-                                            subtext: '数据来源：厦门文化和旅游局&西安文化和旅游局',
-                                            left:'right'
+                                            text: '图14：城市历年接待旅游收入',
+                                            left: 'center',
+                                        top: 'top',
+                                        textStyle:{
+                                            fontSize: '24px',
+                                            fontWeight: 'bolder',
+                                            color: '#6d6b6c',
+                                            fontFamily: 'sans-serif'
+                                        },
                                         },
                                         tooltip: {
                                             trigger: 'axis',
@@ -393,7 +500,41 @@
                                             label: {
                                                 backgroundColor: '#6a7985'
                                             }
-                                            }
+                                            },
+                                            formatter: function (params) {
+                                            // params是一个数组，每个元素是一个对象，包含了当前鼠标所在的数据点的信息
+                                            // 你可以根据你的需求来自定义tooltip的内容和格式
+                                            // console.log([params[0].color, params[1].color]);
+                                            // console.log([params[0]])
+                                            var name0 = params[0].name; // 获取酒店类型
+                                            var value0 = params[0].value; // 获取迁移指数
+                                            var color0 = params[0].color; // 获取颜色
+
+                                            var name1 = params[1].name;
+                                            var value1 = params[1].value;
+                                            var color1 = params[1].color;
+                                            // 返回一个HTML字符串，使用span标签来设置字体颜色和大小，使用margin-right来设置距离
+                                            return (
+                                            '<span style="color:' +
+                                            '#000' +
+                                            ';font-size:14px!important;font-weight: bold; text-align: left!important; margin-bottom：4px!important">' +
+                                            name0 +
+                                            '</span>' +
+                                            '<br>' +
+                                            //'<span style="margin-right:5px;"></span>' + // 设置距离为5px
+                                            '<span style="color:' +
+                                            color0 +
+                                            '!important;font-size:10px!important;margin：0">' + '淄博市酒店预订率：' +
+                                            value0 +
+                                            '</span>'+
+                                            '<br>'+
+                                            '<span style="color:' +
+                                            color1 +
+                                            '!important;font-size:10px!important;margin：0">' + '周边县市酒店预订率：' +
+                                            value1 +
+                                            '</span>' 
+                                            );
+                                        },
                                         },
                                         legend: {
                                             data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
@@ -448,6 +589,7 @@
                                         };
                                 chart2.setOption(option);
                 </script>
+                 <p>数据来源：厦门文化和旅游局&西安文化和旅游局</p>
             </div>
     
 
@@ -560,7 +702,7 @@
         </div>
     </div>
 </div>
-
+<div style="text-align: center; color: #999999; font-size: 12px;">滑动查看更多图片</div>
 
 <section>
     <div class="container">
@@ -611,19 +753,460 @@
     </div>
 </section>
 
-<div class="container" style="display: flex;justify-content: center;align-items: center;">
-    <div class=" ">
-        <div style="margin-left: 20px; display: flex; flex: 1 1 0%; flex-direction: row; overflow-x: auto; margin-top: 10px;">
-            <div>
-                <img src="assets/images/曹县指数.png" style=" width: 680px; height: 340px;">
+
+<section class="pt-20" style="background-color: #fff;">
+
+    <div class="container" style="display: flex; justify-content: center; align-items: center;">
+        <div class="row resourse ">
+
+            <div class="juzhong">
+                <!-- 放旅游人数变化 -->
+                <div id="search_index" style="width: 700px;height: 600px;border: 0 solid;"></div>
+                <script type="text/javascript">
+                    var dom = document.getElementById('search_index');
+                    var chart15 = echarts.init(dom, null, {
+                        renderer: 'canvas',
+                        useDirtyRect: false
+                    });
+                    var app = {};
+                    // var ROOT_PATH = 'https://echarts.apache.org/examples';
+                    var option;
+                
+                    option = {
+                        title: {
+                            text: '图15：百度搜索指数',
+                            left: 'center',
+                            top: 'top',
+                            textStyle: {
+                                fontSize: '24px',
+                                fontWeight: 'bolder',
+                                color: '#6d6b6c',
+                                fontFamily: 'sans-serif'
+                            },
+                        },
+                        tooltip: {
+                            trigger: 'axis'
+                        },
+                        grid: {
+                            left: '5%',
+                            right: '15%',
+                            bottom: '10%'
+                        },
+                        xAxis: {
+                            data: ['2023-02-28',
+                                '2023-03-01',
+                                '2023-03-02',
+                                '2023-03-03',
+                                '2023-03-04',
+                                '2023-03-05',
+                                '2023-03-06',
+                                '2023-03-07',
+                                '2023-03-08',
+                                '2023-03-09',
+                                '2023-03-10',
+                                '2023-03-11',
+                                '2023-03-12',
+                                '2023-03-13',
+                                '2023-03-14',
+                                '2023-03-15',
+                                '2023-03-16',
+                                '2023-03-17',
+                                '2023-03-18',
+                                '2023-03-19',
+                                '2023-03-20',
+                                '2023-03-21',
+                                '2023-03-22',
+                                '2023-03-23',
+                                '2023-03-24',
+                                '2023-03-25',
+                                '2023-03-26',
+                                '2023-03-27',
+                                '2023-03-28',
+                                '2023-03-29',
+                                '2023-03-30',
+                                '2023-03-31',
+                                '2023-04-01',
+                                '2023-04-02',
+                                '2023-04-03',
+                                '2023-04-04',
+                                '2023-04-05',
+                                '2023-04-06',
+                                '2023-04-07',
+                                '2023-04-08',
+                                '2023-04-09',
+                                '2023-04-10',
+                                '2023-04-11',
+                                '2023-04-12',
+                                '2023-04-13',
+                                '2023-04-14',
+                                '2023-04-15',
+                                '2023-04-16',
+                                '2023-04-17',
+                                '2023-04-18',
+                                '2023-04-19',
+                                '2023-04-20',
+                                '2023-04-21',
+                                '2023-04-22',
+                                '2023-04-23',
+                                '2023-04-24',
+                                '2023-04-25',
+                                '2023-04-26',
+                                '2023-04-27',
+                                '2023-04-28',
+                                '2023-04-29',
+                                '2023-04-30',
+                                '2023-05-01',
+                                '2023-05-02',
+                                '2023-05-03',
+                                '2023-05-04',
+                                '2023-05-05',
+                                '2023-05-06',
+                                '2023-05-07',
+                                '2023-05-08',
+                                '2023-05-09',
+                                '2023-05-10',
+                                '2023-05-11',
+                                '2023-05-12',
+                                '2023-05-13',
+                                '2023-05-14',
+                                '2023-05-15',
+                                '2023-05-16',
+                                '2023-05-17',
+                                '2023-05-18',
+                                '2023-05-19',
+                                '2023-05-20',
+                                '2023-05-21',
+                                '2023-05-22',
+                                '2023-05-23',
+                                '2023-05-24',
+                                '2023-05-25',
+                                '2023-05-26',
+                                '2023-05-27',
+                                '2023-05-28',
+                                '2023-05-29',
+                                '2023-05-30',
+                                '2023-05-31',
+                                '2023-06-01',
+                                '2023-06-02',
+                                '2023-06-03',
+                                '2023-06-04',
+                                '2023-06-05',
+                                '2023-06-06',
+                                '2023-06-07',
+                                '2023-06-08',
+                                '2023-06-09',
+                                '2023-06-10',
+                                '2023-06-11',
+                                '2023-06-12',
+                                '2023-06-13',
+                                '2023-06-14',
+                                '2023-06-15',
+                                '2023-06-16',
+                                '2023-06-17',
+                                '2023-06-18',
+                                '2023-06-19',
+                                '2023-06-20',
+                                '2023-06-21',
+                                '2023-06-22',
+                                '2023-06-23',
+                                '2023-06-24',
+                                '2023-06-25',
+                                '2023-06-26',
+                                '2023-06-27',
+                                '2023-06-28',
+                                '2023-06-29',
+                                '2023-06-30',
+                                '2023-07-01',
+                                '2023-07-02',
+                                '2023-07-03',
+                                '2023-07-04',
+                                '2023-07-05',
+                                '2023-07-06',
+                                '2023-07-07',
+                                '2023-07-08',
+                                '2023-07-09',
+                                '2023-07-10',
+                                '2023-07-11',
+                                '2023-07-12',
+                                '2023-07-13',
+                                '2023-07-14',
+                                '2023-07-15',
+                                '2023-07-16',
+                                '2023-07-17',
+                                '2023-07-18',
+                                '2023-07-19',
+                                '2023-07-20',
+                                '2023-07-21',
+                                '2023-07-22',
+                                '2023-07-23',
+                                '2023-07-24',
+                                '2023-07-25',
+                                '2023-07-26',
+                                '2023-07-27',
+                                '2023-07-28'
+                            ]
+                        },
+                        yAxis: {},
+                        toolbox: {
+                            right: 10,
+                            feature: {
+                                dataZoom: {
+                                    yAxisIndex: 'none'
+                                },
+                                restore: {},
+                                saveAsImage: {}
+                            }
+                        },
+                        dataZoom: [{
+                                startValue: '2023-02-28'
+                            },
+                            {
+                                type: 'inside'
+                            }
+                        ],
+                        visualMap: {
+                            top: 50,
+                            right: 10,
+                            pieces: [{
+                                    gt: 0,
+                                    lte: 4713,
+                                    color: '#93CE07'
+                                },
+                                {
+                                    gt: 4713,
+                                    lte: 11270,
+                                    color: '#FBDB0F'
+                                },
+                                {
+                                    gt: 11270,
+                                    lte: 21203,
+                                    color: '#FC7D02'
+                                },
+                                {
+                                    gt: 21203,
+                                    lte: 31227,
+                                    color: '#FD0100'
+                                },
+                                {
+                                    gt: 31277,
+                                    lte: 39862,
+                                    color: '#AA069F'
+                                },
+                                {
+                                    gt: 39862,
+                                    lte: 64328,
+                                    color: '#AC3B2A'
+                                }
+                            ],
+                            outOfRange: {
+                                color: '#999'
+                            }
+                        },
+                        series: {
+                            name: '搜索指数',
+                            type: 'line',
+                            data: [0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                0,
+                                3018,
+                                2817,
+                                2827,
+                                2234,
+                                2011,
+                                2303,
+                                1757,
+                                2366,
+                                1553,
+                                1690,
+                                1468,
+                                1609,
+                                1493,
+                                1635,
+                                2265,
+                                2153,
+                                2977,
+                                2933,
+                                3127,
+                                3160,
+                                3068,
+                                3235,
+                                2831,
+                                2160,
+                                2549,
+                                2361,
+                                2297,
+                                10633,
+                                10666,
+                                15042,
+                                24329,
+                                27472,
+                                29986,
+                                24639,
+                                26977,
+                                32882,
+                                35920,
+                                33759,
+                                30581,
+                                31227,
+                                26491,
+                                28825,
+                                28303,
+                                25728,
+                                36657,
+                                38935,
+                                56683,
+                                64328,
+                                60884,
+                                50787,
+                                39862,
+                                33469,
+                                29789,
+                                23336,
+                                21203,
+                                19424,
+                                15735,
+                                11270,
+                                9789,
+                                8383,
+                                7224,
+                                8463,
+                                7898,
+                                6931,
+                                7136,
+                                7611,
+                                6974,
+                                6848,
+                                7019,
+                                6801,
+                                5984,
+                                5661,
+                                5379,
+                                4713,
+                                5109,
+                                5339,
+                                4961,
+                                3897,
+                                3802,
+                                3609,
+                                3385,
+                                3647,
+                                3775,
+                                3843,
+                                3700,
+                                4624,
+                                3869,
+                                3588,
+                                3568,
+                                3987,
+                                3959,
+                                3763,
+                                3634,
+                                3673,
+                                4228,
+                                4313,
+                                5102,
+                                3511,
+                                3360,
+                                3277,
+                                3201,
+                                4212,
+                                3593,
+                                3888,
+                                3479,
+                                3580,
+                                3214,
+                                3348,
+                                3239,
+                                2942,
+                                3462,
+                                2740,
+                                2764,
+                                2454,
+                                3973,
+                                4489,
+                                3767,
+                                2732,
+                                3055,
+                                2697,
+                                2614,
+                                2079,
+                                3055,
+                                2842,
+                                2615,
+                                2373,
+                                2450,
+                                2584,
+                                2303,
+                                2117,
+                                2026,
+                                2037,
+                                1980,
+                                2066,
+                                1965,
+                                1991,
+                                1989,
+                                1905,
+                                1745,
+                                1780,
+                                1795,
+                                1721,
+                                1685,
+                                1717,
+                                1831,
+                                1641,
+                                1556,
+                                1688,
+                                1681,
+                                1743,
+                                1739,
+                                1755,
+                                1719,
+                                1673,
+                                1699,
+                                1656,
+                                1718,
+                                1703,
+                                1659
+                            ],
+                            markLine: {
+                                silent: true,
+                                lineStyle: {
+                                    color: '#333'
+                                },
+                                data: [{
+                                        yAxis: 3207.5
+                                    },
+                                    {
+                                        yAxis: 7963
+                                    }
+                                ]
+                            }
+                        }
+                    };
+                
+                    chart15.setOption(option);
+                    </script>
+                <p>数据来源：http://index.baidu.com</p>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+
 
 <section>
     <div class="container">
-        <div class="col-lg-12 col-lg-6 word pt-60">
+        <div class="col-lg-12 col-lg-6 word pt-20">
             <p>
                 #山东曹县棺材占日本 90%市场##曹县演出服企业数量全国第一##曹县汉服一年卖出 19 亿元#迅速发酵成微博热议话题。其实早在 2020 年，曹县就在阿里研究院发布《淘宝村百强县名单》名列第二。曹县有淘宝村 151 个、淘宝镇 17 个。
                 2020 年，国内 70%的演出服，三分之一的汉服，70%茶酒等木材包材出自曹县，曹县还拥有亚马逊 40%的木制品圣诞挂件市场，生产的木材小家具销往了欧美和俄罗斯等多个西方国家。
@@ -666,6 +1249,19 @@
         </div>
     </div>
 </section>
+
+<section>
+    <div class="container pt-120">
+        <div class="row justify-content-start">
+            <div class="col-xl-12 col-lg-12 text-left">
+                <a href="./part-3.html" :hover="color:#fff">
+                    <image src="./assets/images/three.png" alt> 
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 </div>
 

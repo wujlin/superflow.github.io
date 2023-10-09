@@ -42,6 +42,72 @@
     <script
         src="https://api.map.baidu.com/getscript?v=3.0&ak=KOmVjPVUAey1G2E8zNhPiuQ6QiEmAwZu&services=&t=20200327103013"></script>
     <style type="text/css">
+        .chatbox {
+            height: auto;
+            width: 100%;
+            /* 指定宽度 */
+            max-width: 2400px;
+            /* 最大宽度 */
+            min-width: 300px;
+            /* 最小宽度 */
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 50px auto;
+            /* 水平居中对话框 */
+            background-color: #f9f9f9;
+            position: relative;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .message {
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 5px 0;
+            max-width: 100%;
+            word-wrap: break-word;
+        }
+
+        .left {
+            align-self: flex-start;
+            background-color: #e6e6e6;
+        }
+
+        .right {
+            align-self: flex-end;
+            background-color: #0099ff;
+            color: white;
+        }
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 5px;
+            order: -1;
+            /* 将头像放在文本前面 */
+        }
+
+        .right-avatar {
+            order: 1;
+            /* 将AI头像放在文本后面 */
+        }
+
+        .message-container {
+            display: flex;
+            align-items: center;
+            /* 使头像与消息文本垂直居中 */
+            cursor: pointer;
+            /* 当鼠标放在消息容器上时，显示为指针，提示用户可以点击 */
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+
         @font-face {
             font-family: 'zitiao';
             src: url('./assets/fonts/ZiTiao.ttf');
@@ -191,81 +257,79 @@
     <div class="container">
         <div class="chatbox">
             <div class="message-container">
-                <img src="assets/images/user-avatar.svg" alt="User Avatar" class="avatar left-avatar">
-                <div class="message left" id="message1">
+                <img src="assets/images/user-avatar.svg" alt="User Avatar" class="avatar right-avatar">
+                <div class="message right" id="message1">
                     <p>我要去淄博旅游，帮我做个攻略，从出行、住宿、食物三个方面展开</p>
                 </div>
             </div>
             </br>
             <div class="message-container hidden" id="message2-container">
-                <img src="assets/images/ai-avatar.svg" alt="AI Avatar" class="avatar right-avatar">
-                <div class="message right" id="message2">
+                <img src="assets/images/ai-avatar.svg" alt="AI Avatar" class="avatar left-avatar">
+                <div class="message left" id="message2">
                     <p>出行的部分：</p>
-                    <p>首先，你要到达淄博，可以选择坐飞机、火车或者汽车。如果你选择乘飞机的话，需要先飞至济南市，然后坐汽车前往淄博市。如果你选择火车的话，淄博有火车站，你可以直接抵达淄博。</p>
-                    <p>在淄博市内，公交车和出租车都是很好的选择。淄博市的公交线路比较完善，可以达到大部分的旅游景点。出租车的话，虽然价格稍高，但是会更加方便和快捷。</p>
+                    <o>首先，你要到达淄博，可以选择坐飞机、火车或者汽车。如果乘飞机的话，需要先飞至济南市，然后坐汽车前往淄博市。如果坐火车的话，你可以直接抵达淄博火车站。在淄博市内，公交车和出租车都是很好的选择。淄博市的公交线路比较完善，可以达到大部分旅游景点。出租车的话，虽然价格稍高，但是会更加方便快捷。
+                    </o>
                     <p>住宿的部分：</p>
-                    <p>淄博市有很多的酒店和招待所可以供你选择。如果你的预算比较充足的话，你可以选择如淄博希尔顿酒店、万达嘉华酒店等高端酒店。如果你的预算比较紧张的话，那么像速8酒店、7天连锁酒店等经济型酒店也会是不错的选择。
+                    <p>淄博市有很多酒店和招待所可以供你选择。如果预算比较充足的话，你可以选择如淄博希尔顿酒店、万达嘉华酒店等高端酒店。如果预算比较紧张的话，那么像速8酒店、7天连锁酒店等经济型酒店也会是不错的选择。
                     </p>
                     <p>食物的部分：</p>
-                    <p>淄博市的美食也是非常值得一试的。比如淄博烧烤，这是淄博的特色烧烤，口感独特，非常美味。淄博还有一个非常有名的小吃，叫做焦玫瑰，是一种鸡蛋和玫瑰酱做的糕点，口味独特，非常好吃。</p>
+                    <p>淄博市的美食也是非常值得一试的。比如淄博烧烤，口感独特，非常美味。淄博还有一个非常有名的小吃，叫做焦玫瑰，是一种鸡蛋和玫瑰酱做的糕点，口味独特，非常好吃。</p>
                     <p>旅游线路参考：</p>
-                    第一天：抵达淄博，安排好住宿后可以逛一逛淄博的市区，体验一下淄博的城市氛围，晚上可以尝试淄博烧烤。</p>
-                    第二天：游览淄博的名胜古迹，例如周公城和著名的博山石城。</p>
-                    第三天：逛淄博博物馆，了解淄博的历史文化，晚上可以品尝淄博的地道美食焦玫瑰。</p>
-                    记得随时关注天气预报，良好的天气可以让你的旅行体验更佳。以上，祝你在淄博有一个愉快的旅行！</p>
+                    第一天：抵达淄博，安排好住宿后可以逛一逛淄博的市区，体验一下淄博的城市氛围，晚上可以尝试淄博烧烤。
+                    第二天：游览淄博的名胜古迹，例如周公城和著名的博山石城。
+                    第三天：逛淄博博物馆，了解淄博的历史文化，晚上可以品尝淄博的地道美食焦玫瑰。
+                    记得随时关注天气预报，良好的天气可以让你的旅行体验更佳。以上，祝你在淄博有一个愉快的旅行！
                 </div>
             </div>
             </br>
             <div class="message-container hidden" id="message3-container">
-                <img src="assets/images/user-avatar.svg" alt="User Avatar" class="avatar left-avatar">
-                <div class="message left" id="message3">
+                <img src="assets/images/user-avatar.svg" alt="User Avatar" class="avatar right-avatar">
+                <div class="message right" id="message3">
                     <p>那淄博有哪些好吃的烧烤店呢？推荐几个</p>
                 </div>
             </div>
             </br>
             <div class="message-container hidden" id="message4-container">
-                <img src="assets/images/ai-avatar.svg" alt="AI Avatar" class="avatar right-avatar">
-                <div class="message right" id="message4">
+                <img src="assets/images/ai-avatar.svg" alt="AI Avatar" class="avatar left-avatar">
+                <div class="message left" id="message4">
                     <p>食物的部分：</p>
-                    <p>淄博市的烧烤店有很多，以下是一些根据网络评价较高的烧烤店推荐：</p>
-                    <p>老郭羊肉串烧烤店：位于淄博市张店区新村路张石高速公路出口西50米。这里的羊肉串位居淄博烧烤之首，口味地道，入口即化。</p>
-                    <p>五岳烧烤城：位于张店区北城新区科技桥头。以野生山鸡、山鸽、野兔等独特的烧烤为主，新颖别致。</p>
-                    <p>青天烧烤店：位于淄博市桓台县中城风光大街中段。此店在当地是非常具有口碑的一家烧烤小店，受到了居民招牌烤肉十分受欢迎。</p>
-                    <p>官庄烧烤城：位于临淄区浩坤湖旁标题路与新河路交叉口。这是一家档口众多的大型烧烤广场，种类繁多，适合朋友聚会。</p>
-                    <p>以上几个都是非常不错的选择，具体可以根据你的口味和位置来选择。不过不论哪一家，由于烧烤店的营业时间有可能会有变动，建议在前往之前先致电商家确认。</p>
+                    老郭羊肉串烧烤店：位于淄博市张店区新村路张石高速公路出口西50米。这里的羊肉串位居淄博烧烤之首，口味地道，入口即化。
+                    五岳烧烤城：位于张店区北城新区科技桥头。以野生山鸡、山鸽、野兔等独特的烧烤为主，新颖别致。
+                    青天烧烤店：位于淄博市桓台县中城风光大街中段。此店在当地是非常具有口碑的一家烧烤小店，受到了居民招牌烤肉十分受欢迎。
+                    官庄烧烤城：位于临淄区浩坤湖旁标题路与新河路交叉口。这是一家档口众多的大型烧烤广场，种类繁多，适合朋友聚会。
+                    以上几个都是非常不错的选择，具体可以根据你的口味和位置来选择。不过不论哪一家，由于烧烤店的营业时间有可能会有变动，建议在前往之前先致电商家确认。
                 </div>
             </div>
             </br>
             <div class="message-container hidden" id="message5-container">
-                <img src="assets/images/user-avatar.svg" alt="User Avatar" class="avatar left-avatar">
-                <div class="message left" id="message5">
+                <img src="assets/images/user-avatar.svg" alt="User Avatar" class="avatar right-avatar">
+                <div class="message right" id="message5">
                     <p>要吃淄博美食的话，哪些酒店比较适合居住呢？</p>
                 </div>
             </div>
             </br>
             <div class="message-container hidden" id="message6-container">
-                <img src="assets/images/ai-avatar.svg" alt="AI Avatar" class="avatar right-avatar">
-                <div class="message right" id="message6">
+                <img src="assets/images/ai-avatar.svg" alt="AI Avatar" class="avatar left-avatar">
+                <div class="message left" id="message6">
                     如果希望住宿地点旁边有丰富的美食选择，以下是一些在市中心、交通便利、周边美食众多的酒店推荐：
-                    <p>淄博蓝海商务酒店：位于张店区，距离淄博站仅1公里，附近有多家餐厅和小吃店，非常方便尝试当地的美食。</p>
-                    <p>淄博元亨大酒店：位于淄川区大青山路，周围有很多路边小吃和餐馆，是品尝当地美食的好地方。</p>
-                    <p>万达嘉华酒店：位于张店区高新技术开发区内，酒店自身的餐饮设施就很完善，旁边就是万达广场，有众多的美食选择。</p>
-                    <p>共青团路伯爵大酒店：位于张店区，紧邻购物、餐饮等生活设施，交通便利，美食丰富。
-                        选择酒店的时候，可以综合考虑交通便利性、周边的餐饮和购物设施、酒店自身的设施和服务等因素。</p>
+                    淄博蓝海商务酒店：位于张店区，距离淄博站仅1公里，附近有多家餐厅和小吃店，非常方便尝试当地的美食。
+                    淄博元亨大酒店：位于淄川区大青山路，周围有很多路边小吃和餐馆，是品尝当地美食的好地方。
+                    万达嘉华酒店：位于张店区高新技术开发区内，酒店自身的餐饮设施就很完善，旁边就是万达广场，有众多的美食选择。
+                    共青团路伯爵大酒店：位于张店区，紧邻购物、餐饮等生活设施，交通便利，美食丰富。 选择酒店的时候，可以综合考虑交通便利性、周边的餐饮和购物设施、酒店自身的设施和服务等因素。
                 </div>
             </div>
             </br>
             <div class="message-container hidden" id="message7-container">
-                <img src="assets/images/user-avatar.svg" alt="User Avatar" class="avatar left-avatar">
-                <div class="message left" id="message7">
-                    <p>好嘞，现在出发！</p>
+                <img src="assets/images/user-avatar.svg" alt="User Avatar" class="avatar right-avatar">
+                <div class="message right" id="message7">
+                    好嘞，现在出发！
                 </div>
             </div>
             </br>
             <div class="message-container hidden" id="message8-container">
-                <img src="assets/images/ai-avatar.svg" alt="AI Avatar" class="avatar right-avatar">
-                <div class="message right" id="message8">
-                    <p>祝你旅途愉快！期待你分享淄博的美食和旅行体验。如果在旅行过程中需要任何帮助，随时联系我。一路平安！</p>
+                <img src="assets/images/ai-avatar.svg" alt="AI Avatar" class="avatar left-avatar">
+                <div class="message left" id="message8">
+                    祝你旅途愉快！期待你分享淄博的美食和旅行体验。如果在旅行过程中需要任何帮助，随时联系我。一路平安！
                 </div>
             </div>
             </br>
@@ -290,11 +354,14 @@
                 从月度数据来看，1 月当地收入出现两位数降幅，2 月份收入增速实现由负转正出现微增，而 3 月份收入增速高达 32%。</p>
         </div>
     </div>
-    <div class="container">
-        <div class="col-lg-12 col-lg-6 text-left">
-            <h2 style="color: #000;margin-top:12px;font-size: 3rem; font-family: zitiao;">交通</h2>
+    <section class="event-details pt-120 pb-120"
+        style="background: url(./assets/images/交通.png) no-repeat; background-position:30% 0; background-size:100%;">
+        <div class="container">
+            <div class="col-lg-12 col-lg-6 text-left">
+                <!-- <h2 style="color: #000;margin-top:12px;font-size: 3rem; font-family: zitiao;">交通</h2> -->
+            </div>
         </div>
-    </div>
+    </section>
     <div class="container">
         <div class="col-lg-12 col-lg-6 word pt-60">
             <p>
@@ -329,6 +396,27 @@
                         $.get('assets/data/mobility_time_new.json', function (data) {
                             chart2.setOption(
                                 (option = {
+                                    graphic: [{
+                                        id: 'text1',
+                                        type: 'text',
+                                        style: {
+                                            text: '淄博日均迁入指数随着\n淄博烧烤热度的涨高而增加',
+                                            x: 100,
+                                            y: 430
+                                        },
+                                    },
+                                    {
+                                        type: 'circle',
+                                        shape: {
+                                            cx: 180,
+                                            cy: 460,
+                                            r: 8
+                                        },
+                                        style: {
+                                            fill: '#ffa900'
+                                        }
+                                    },]
+                                    ,
                                     title: {
                                         text: '图1：淄博日均迁入指数',
                                         left: 'center',
@@ -584,11 +672,14 @@
             <p style="color:#a0a3a4!important; align-items: center; text-align: center!important;">数据来源： 高德数据API。</p>
         </div>
     </section>
-    <div class="container">
-        <div class="col-lg-12 col-lg-6">
-            <h2 style="color: #000; font-size: 3rem;"> 住宿</h2>
+    <section class="event-details pt-120 pb-120"
+        style="background: url(./assets/images/住宿.png) no-repeat; background-position:30% 0; background-size:100%;">
+        <div class="container">
+            <div class="col-lg-12 col-lg-6 text-left">
+                <!-- <h2 style="color: #000;margin-top:12px;font-size: 3rem; font-family: zitiao;">交通</h2> -->
+            </div>
         </div>
-    </div>
+    </section>
     <section class="pt-20 pb-20" style="background-color: #fff;">
         <div class="container" style="width:800px">
             <div class="row resourse ">
@@ -697,8 +788,8 @@
                                 ],
                                 markPoint: {
                                     data: [
-                                        { name: 'Max', value: 182.2, xAxis: 7, yAxis: 183 },
-                                        { name: 'Min', value: 2.3, xAxis: 11, yAxis: 3 }
+                                        { type: 'max', name: 'Max' },
+                                        { type: 'min', name: 'Min' }
                                     ]
                                 },
                             }
@@ -707,7 +798,7 @@
 
                         option && chart3.setOption(option);
                     </script>
-                    <p>数据来源： 酒店之家。</p>
+                    <p>数据来源： 酒店之家。图中标记了数量最多的酒店类型和数量最少的酒店类型。</p>
                 </div>
                 <!-- 类型图结束 -->
                 <div class="col-md-6 juzhong" style="padding-left:0px">
@@ -953,9 +1044,9 @@
                                         { type: 'min', name: 'Min' }
                                     ]
                                 },
-                                markLine: {
-                                    data: [{ type: 'average', name: 'Avg' }]
-                                }
+                                // markLine: {
+                                //     data: [{ type: 'average', name: 'Avg' }]
+                                // }
                             },
                             {
                                 name: '周边县市',
@@ -973,26 +1064,26 @@
                                     { type: 'min', name: 'Min' }
                                     ]
                                 },
-                                markLine: {
-                                    data: [
-                                        { type: 'average', name: 'Avg' },
-                                        [{
-                                            symbol: 'none',
-                                            x: '90%',
-                                            yAxis: 'max'
-                                        },
-                                        {
-                                            symbol: 'circle',
-                                            label: {
-                                                position: 'start',
-                                                formatter: 'Max'
-                                            },
-                                            type: 'max',
-                                            name: '最高点'
-                                        }
-                                        ]
-                                    ]
-                                }
+                                // markLine: {
+                                //     data: [
+                                //         { type: 'average', name: 'Avg' },
+                                //         [{
+                                //             symbol: 'none',
+                                //             x: '90%',
+                                //             yAxis: 'max'
+                                //         },
+                                //         {
+                                //             symbol: 'circle',
+                                //             label: {
+                                //                 position: 'start',
+                                //                 formatter: 'Max'
+                                //             },
+                                //             type: 'max',
+                                //             name: '最高点'
+                                //         }
+                                //         ]
+                                //     ]
+                                // }
                             }
                             ]
                         };
@@ -1301,7 +1392,10 @@
                                 type: 'bar',
                                 stack: 'total',
                                 label: {
-                                    show: true
+                                    show: true,
+                                    formatter: function (params) {
+                                        return params.value === 0 ? '' : params.value;
+                                    }
                                 },
                                 emphasis: {
                                     focus: 'series'
@@ -1313,7 +1407,10 @@
                                 type: 'bar',
                                 stack: 'total',
                                 label: {
-                                    show: true
+                                    show: true,
+                                    formatter: function (params) {
+                                        return params.value === 0 ? '' : params.value;
+                                    }
                                 },
                                 emphasis: {
                                     focus: 'series'
@@ -1325,7 +1422,10 @@
                                 type: 'bar',
                                 stack: 'total',
                                 label: {
-                                    show: true
+                                    show: true,
+                                    formatter: function (params) {
+                                        return params.value === 0 ? '' : params.value;
+                                    }
                                 },
                                 emphasis: {
                                     focus: 'series'
@@ -1358,10 +1458,12 @@
         </div>
     </section>
     <!-- <img src="assets/images/roast_1.png" alt="9.png" style="width: 980px; height: 896px; object-fit: cover; object-position: 50% 50%;" width="980" height="620" fetchpriority="high"> -->
-    <section class="container">
-        <!-- <div class="page-header__bg" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url(assets/images/roast_1.png);background-position: 0 -200px;background-color: transparent;"></div> -->
-        <div class="col-lg-12 col-lg-6 text-left">
-            <h2 style="color:#000; font-size: 3rem">饮食</h2>
+    <section class="event-details pt-120 pb-120"
+        style="background: url(./assets/images/饮食.png) no-repeat; background-position:30% 0; background-size:100%;">
+        <div class="container">
+            <div class="col-lg-12 col-lg-6 text-left">
+                <!-- <h2 style="color: #000;margin-top:12px;font-size: 3rem; font-family: zitiao;">交通</h2> -->
+            </div>
         </div>
     </section>
     <section>

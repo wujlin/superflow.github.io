@@ -158,6 +158,10 @@
                                 <div class="col-xl-12 col-lg-12 text-left">
                                     <h1 style="color: #fff; margin-top: 12px;">前车可鉴：网红城市的热度消散</h1>
                                 </div>
+                                <div class="col-xl-12 col-lg-12 text-left">
+                                    <h3 style="color: #fff; margin-top:10px; font-size: 2rem;">
+                                        像<span style="font-weight: bold; color: #ffa900;">淄博</span>一样的网红城市，该何去何从？。</h3>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -284,7 +288,7 @@
                     这种网红城市其实并不罕见，诸如厦门、重庆、曹县等都是在短时间内在社交媒体上热度骤升的网红城市。这些城市未必具有突出的经济实力，但或出名于悠久的历史文化、或闻名于优美的自然风光、抑或是新奇的美食体验等，或仅仅因为社交媒体平台的网络爆梗，就在短时间内吸引了众多游客来参游玩打卡。
                 </p>
                 <p>
-                    <span style="font-weight: bold; color: #df0000;">而面临同样涌入的热量，这些城市目前的发展却背道而驰。</span>
+                    <span style="font-weight: bold; color: #ffa900;">而面临同样涌入的热量，这些城市目前的发展却背道而驰。</span>
                 </p>
             </div>
         </div>
@@ -336,19 +340,19 @@
     <section class="pt-20 pb-20" style="background-color: #fff;">
         <div class="container" style="width:800px">
             <div class="row resourse ">
-                <div class="col-md-6 juzhong">
+                <div class="juzhong">
                     <!-- 放旅游人数变化 -->
-                    <div id="tour_number" style="width: 100%;height: 600px;border: 0 solid;"></div>
+                    <div id="tour_number" style="width: 650px;height: 600px;border: 0 solid;padding-left: 100px;"></div>
                     <script type="text/javascript">
                         var dom = document.getElementById('tour_number');
-                        var chart1 = echarts.init(dom, null, {
+                        var chart13 = echarts.init(dom, null, {
                             renderer: 'canvas',
                             useDirtyRect: false
                         });
-
+                        const colors = ['#5470C6', '#91CC75', '#EE6666', '#ffa900'];
                         var option = {
                             title: {
-                                text: '图13：城市历年旅游人数变化',
+                                text: '图13：城市历年旅游人数及旅游业收入变化',
                                 left: 'center',
                                 top: 'top',
                                 textStyle: {
@@ -358,13 +362,11 @@
                                     fontFamily: 'sans-serif'
                                 },
                             },
+                            color: colors,
                             tooltip: {
                                 trigger: 'axis',
                                 axisPointer: {
-                                    type: 'cross',
-                                    label: {
-                                        backgroundColor: '#6a7985'
-                                    }
+                                    type: 'cross'
                                 },
                                 formatter: function (params) {
                                     // params是一个数组，每个元素是一个对象，包含了当前鼠标所在的数据点的信息
@@ -378,194 +380,137 @@
                                     var name1 = params[1].name;
                                     var value1 = params[1].value;
                                     var color1 = params[1].color;
+
+                                    var name2 = params[2].name;
+                                    var value2 = params[2].value;
+                                    var color2 = params[2].color;
+
+                                    var name3 = params[3].name;
+                                    var value3 = params[3].value;
+                                    var color3 = params[3].color;
                                     // 返回一个HTML字符串，使用span标签来设置字体颜色和大小，使用margin-right来设置距离
                                     return (
                                         '<span style="color:' +
                                         '#000' +
-                                        ';font-size:14px!important;font-weight: bold; text-align: left!important; margin-bottom：4px!important">' +
+                                        ';font-size:14px!important;font-weight: bold; text-align: left!important; margin-bottom:4px!important">' +
                                         name0 +
                                         '</span>' +
                                         '<br>' +
                                         //'<span style="margin-right:5px;"></span>' + // 设置距离为5px
                                         '<span style="color:' +
                                         color0 +
-                                        '!important;font-size:10px!important;margin：0">' + '淄博市酒店预订率：' +
+                                        '!important;font-size:10px!important;margin:0">' + '厦门接待游客数：' +
                                         value0 +
                                         '</span>' +
                                         '<br>' +
                                         '<span style="color:' +
                                         color1 +
-                                        '!important;font-size:10px!important;margin：0">' + '周边县市酒店预订率：' +
+                                        '!important;font-size:10px!important;margin:0">' + '西安接待游客数：' +
                                         value1 +
+                                        '</span>' +
+                                        '<br>' +
+                                        '<span style="color:' +
+                                        color2 +
+                                        '!important;font-size:10px!important;margin:0">' + '厦门旅游业收入：' +
+                                        value2 +
+                                        '</span>' +
+                                        '<br>' +
+                                        '<span style="color:' +
+                                        color3 +
+                                        '!important;font-size:10px!important;margin:0">' + '西安旅游业收入：' +
+                                        value3 +
                                         '</span>'
                                     );
                                 },
                             },
-                            legend: {
-                                data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+                            grid: {
+                                right: '10%'
                             },
                             toolbox: {
+                                show: false,
                                 feature: {
-                                    saveAsImage: {}
-                                },
-                                left: 'left'
+                                    dataView: { show: true, readOnly: false },
+                                    restore: { show: true },
+                                    saveAsImage: { show: true }
+                                }
                             },
-                            grid: {
-                                left: '3%',
-                                right: '4%',
-                                bottom: '3%',
-                                containLabel: true
+                            legend: {
+                                data: ['厦门接待游客数', '西安接待游客数', '厦门旅游业收入', '西安旅游业收入'],
+                                bottom: '0'
                             },
-                            xAxis: [{
-                                type: 'category',
-                                boundaryGap: false,
-                                data: ['2016', '2017', '2020', '2021']
-                            }],
-                            yAxis: [{
-                                type: 'value'
-                            }],
-                            series: [{
-                                name: '厦门接待游客数/万人次',
-                                type: 'line',
-                                stack: 'Total',
-                                areaStyle: {},
-                                emphasis: {
-                                    focus: 'series'
-                                },
-                                data: [6770.16, 7830.52, 7830.52, 6568.75]
-                            },
-                            {
-                                name: '西安接待游客数/万人次',
-                                type: 'line',
-                                stack: 'Total',
-                                areaStyle: {},
-                                emphasis: {
-                                    focus: 'series'
-                                },
-                                data: [15012.56, 18093.14, 24000, 20000]
-                            },
-
-                            ]
-                        };
-                        chart1.setOption(option);
-                    </script>
-                    <p>数据来源：厦门文化和旅游局&西安文化和旅游局</p>
-                </div>
-                <div class="col-md-6 juzhong">
-                    <!-- 放旅游收入变化 -->
-                    <div id="tour_income" style="width: 100%;height: 600px;border: 0 solid;"></div>
-                    <script type="text/javascript">
-                        var dom = document.getElementById('tour_income');
-                        var chart2 = echarts.init(dom, null, {
-                            renderer: 'canvas',
-                            useDirtyRect: false
-                        });
-                        var app = {};
-
-                        var option = {
-                            title: {
-                                text: '图14：城市历年接待旅游收入',
-                                left: 'center',
-                                top: 'top',
-                                textStyle: {
-                                    fontSize: '24px',
-                                    fontWeight: 'bolder',
-                                    color: '#6d6b6c',
-                                    fontFamily: 'sans-serif'
-                                },
-                            },
-                            tooltip: {
-                                trigger: 'axis',
-                                axisPointer: {
-                                    type: 'cross',
-                                    label: {
-                                        backgroundColor: '#6a7985'
+                            xAxis: [
+                                {
+                                    type: 'category',
+                                    axisTick: {
+                                        alignWithLabel: true
+                                    },
+                                    // prettier-ignore
+                                    data: ['2016', '2017', '2020', '2021']
+                                }
+                            ],
+                            yAxis: [
+                                {
+                                    type: 'value',
+                                    name: '接待旅游收入/亿元',
+                                    position: 'right',
+                                    alignTicks: true,
+                                    axisLine: {
+                                        show: true,
+                                        lineStyle: {
+                                            // color: colors[0]
+                                        }
+                                    },
+                                    axisLabel: {
+                                        formatter: '{value}'
                                     }
                                 },
-                                formatter: function (params) {
-                                    // params是一个数组，每个元素是一个对象，包含了当前鼠标所在的数据点的信息
-                                    // 你可以根据你的需求来自定义tooltip的内容和格式
-                                    // console.log([params[0].color, params[1].color]);
-                                    // console.log([params[0]])
-                                    var name0 = params[0].name; // 获取酒店类型
-                                    var value0 = params[0].value; // 获取迁移指数
-                                    var color0 = params[0].color; // 获取颜色
 
-                                    var name1 = params[1].name;
-                                    var value1 = params[1].value;
-                                    var color1 = params[1].color;
-                                    // 返回一个HTML字符串，使用span标签来设置字体颜色和大小，使用margin-right来设置距离
-                                    return (
-                                        '<span style="color:' +
-                                        '#000' +
-                                        ';font-size:14px!important;font-weight: bold; text-align: left!important; margin-bottom：4px!important">' +
-                                        name0 +
-                                        '</span>' +
-                                        '<br>' +
-                                        //'<span style="margin-right:5px;"></span>' + // 设置距离为5px
-                                        '<span style="color:' +
-                                        color0 +
-                                        '!important;font-size:10px!important;margin：0">' + '淄博市酒店预订率：' +
-                                        value0 +
-                                        '</span>' +
-                                        '<br>' +
-                                        '<span style="color:' +
-                                        color1 +
-                                        '!important;font-size:10px!important;margin：0">' + '周边县市酒店预订率：' +
-                                        value1 +
-                                        '</span>'
-                                    );
+                                {
+                                    type: 'value',
+                                    name: '接待游客数/万人次',
+                                    position: 'left',
+                                    alignTicks: true,
+                                    axisLine: {
+                                        show: true,
+                                        lineStyle: {
+                                            // color: colors[1]
+                                        }
+                                    },
+                                    axisLabel: {
+                                        formatter: '{value}'
+                                    }
+                                }
+                            ],
+                            series: [
+                                {
+                                    name: '厦门接待游客数',
+                                    type: 'bar',
+                                    yAxisIndex: 1,
+                                    data: [6770.16, 7830.52, 7830.52, 6568.75]
                                 },
-                            },
-                            legend: {
-                                data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
-                            },
-                            toolbox: {
-                                feature: {
-                                    saveAsImage: {}
+                                {
+                                    name: '西安接待游客数',
+                                    type: 'bar',
+                                    yAxisIndex: 1,
+                                    data: [15012.56, 18093.14, 24000, 20000]
                                 },
-                                left: 'left'
-                            },
-                            grid: {
-                                left: '3%',
-                                right: '4%',
-                                bottom: '3%',
-                                containLabel: true
-                            },
-                            xAxis: [{
-                                type: 'category',
-                                boundaryGap: false,
-                                data: ['2016', '2017', '2020', '2021']
-                            }],
-                            yAxis: [{
-                                type: 'value'
-                            }],
-                            series: [{
-                                name: '厦门旅游收入/亿元',
-                                type: 'line',
-                                stack: 'Total',
-                                areaStyle: {},
-                                emphasis: {
-                                    focus: 'series'
+                                {
+                                    name: '厦门旅游业收入',
+                                    type: 'line',
+                                    yAxisIndex: 0,
+                                    data: [968.26, 1168.52, 1301.00, 855.17]
                                 },
-                                data: [968.26, 1168.52, 1301.00, 855.17]
-                            },
-                            {
-                                name: '西安旅游收入/亿元',
-                                type: 'line',
-                                stack: 'Total',
-                                areaStyle: {},
-                                emphasis: {
-                                    focus: 'series'
+                                {
+                                    name: '西安旅游业收入',
+                                    type: 'line',
+                                    yAxisIndex: 0,
+                                    data: [1213.81, 1633.3, 2460, 2030]
                                 },
-                                data: [1213.81, 1633.3, 2460, 2030]
-                            },
-
                             ]
                         };
-                        chart2.setOption(option);
+                        chart13.setOption(option);
                     </script>
-                    <p>数据来源：厦门文化和旅游局&西安文化和旅游局</p>
+                    <p style="padding-left: 100px;">数据来源：厦门文化和旅游局&西安文化和旅游局</p>
                 </div>
             </div>
         </div>
@@ -667,7 +612,7 @@
             </div>
         </div>
     </div>
-    <div style="text-align: center; color: #999999; font-size: 12px;">滑动查看更多图片</div>
+    <div style="text-align: center; color: #999999; font-size: 12px;">左右滑动查看更多图片</div>
     <section>
         <div class="container">
             <div class="col-lg-12 col-lg-6 word">
@@ -733,7 +678,28 @@
 
                         option = {
                             title: {
-                                text: '图15：百度搜索指数',
+                                graphic: [{
+                                    id: 'text1',
+                                    type: 'text',
+                                    style: {
+                                        text: '淄博日均迁入指数随着\n淄博烧烤热度的涨高而增加',
+                                        x: 100,
+                                        y: 430
+                                    },
+                                },
+                                {
+                                    type: 'circle',
+                                    shape: {
+                                        cx: 180,
+                                        cy: 460,
+                                        r: 8
+                                    },
+                                    style: {
+                                        fill: '#ffa900'
+                                    }
+                                },]
+                                ,
+                                text: '图14：百度搜索指数',
                                 left: 'center',
                                 top: 'top',
                                 textStyle: {
@@ -1159,19 +1125,19 @@
                                     1703,
                                     1659
                                 ],
-                                markLine: {
-                                    silent: true,
-                                    lineStyle: {
-                                        color: '#333'
-                                    },
-                                    data: [{
-                                        yAxis: 3207.5
-                                    },
-                                    {
-                                        yAxis: 7963
-                                    }
-                                    ]
-                                }
+                                // markLine: {
+                                //     silent: true,
+                                //     lineStyle: {
+                                //         color: '#333'
+                                //     },
+                                //     data: [{
+                                //         yAxis: 3207.5
+                                //     },
+                                //     {
+                                //         yAxis: 7963
+                                //     }
+                                //     ]
+                                // }
                             }
                         };
 

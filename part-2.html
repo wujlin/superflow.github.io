@@ -215,174 +215,150 @@
     </section>
 
 
-    <section class="" style="background-color: #fff;">
-        <div class=" ">
-            <div class="word" style="color: #000">
-                <p> </p>
-            </div>
-        </div>
-
-        <div class="container" style="display: flex; justify-content: center; align-items: center;">
-            <div class="row resourse pt-30">
-                <div class="juzhong">
-                    <!-- <span>图10：各区烧烤店转让数量</span> -->
-                    <!-- 酒店钻级分布 -->
-                    <div id="transfer_pie" style="width: 700px;height: 650px;border: 0 solid;"></div>
+    <section class="pt-20 pb-20" style="background-color: #fff;">
+        <div class="container" style="width:1000px">
+            <div class="row resourse col-lg-12">
+                <div class="col-md-6 juzhong" style="padding-right:0px">
+                    <div id="transfer_pie" style="width: 100%;height: 700px;border: 0 solid;"></div>
                     <script type="text/javascript">
-                        // 初始化图表时设置style
-                        var chart10 = echarts.init(document.getElementById('transfer_pie'));
-                        // 指定图表的配置项和数据
-
-                        var option = {
-                            title: {
-                                text: '图10：淄博市烧烤店转让数量地理分布',
-                                left: 'center',
-                                top: 'top',
-                                textStyle: {
-                                    fontSize: '24px',
-                                    fontWeight: 'bolder',
-                                    color: '#6d6b6c',
-                                    fontFamily: 'sans-serif'
-                                }
+                    // 初始化图表时设置style
+                    var chart10 = echarts.init(document.getElementById('transfer_pie'));
+                    // 指定图表的配置项和数据
+    
+                    var option = {
+                        title: {
+                            text: '图10：淄博市烧烤店转让数量地理分布',
+                            left: 'center',
+                            top: 'top',
+                            textStyle: {
+                                fontSize: '15px',
+                                fontWeight: 'bolder',
+                                color: '#6d6b6c',
+                                fontFamily: 'sans-serif'
+                            }
+                        },
+                        legend: {
+                            top: 'bottom',
+                        },
+                        toolbox: {
+                            left: 'left',
+                            show: false,
+                            feature: {
+                                mark: { show: true },
+                                dataView: { show: true, readOnly: false },
+                                restore: { show: true },
+                                saveAsImage: { show: true }
+                            }
+                        },
+                        tooltip: {
+                            trigger: 'item',
+                            formatter: '{a} <br/>{b} : {c} ({d}%)'
+                        },
+                        series: [{
+                            name: '转让数量',
+                            type: 'pie',
+                            radius: [30, 150],
+                            center: ['50%', '50%'],
+                            roseType: 'area',
+                            itemStyle: {
+                                borderRadius: 8
                             },
-                            legend: {
-                                top: 'bottom',
-                            },
-                            toolbox: {
-                                left: 'left',
-                                show: false,
-                                feature: {
-                                    mark: { show: true },
-                                    dataView: { show: true, readOnly: false },
-                                    restore: { show: true },
-                                    saveAsImage: { show: true }
-                                }
-                            },
-                            tooltip: {
-                                trigger: 'item',
-                                formatter: '{a} <br/>{b} : {c} ({d}%)'
-                            },
-                            series: [
-                                {
-                                    name: '转让数量',
-                                    type: 'pie',
-                                    radius: [50, 250],
-                                    center: ['50%', '50%'],
-                                    roseType: 'area',
-                                    itemStyle: {
-                                        borderRadius: 8
-                                    },
-                                    data: [{ "name": "张店区", "value": 85 }, { "name": "临淄区", "value": 12 },
-                                    { "name": "周村区", "value": 11 }, { "name": "淄川区", "value": 4 },
-                                    { "name": "博山区", "value": 3 }, { "name": "高新区", "value": 2 },
-                                    { "name": "恒台县", "value": 2 }, { "name": "沂源县", "value": 1 },
-                                    { "name": "临川区", "value": 1 }]
-                                }
+                            data: [{ "name": "张店区", "value": 85 }, { "name": "临淄区", "value": 12 },
+                                { "name": "周村区", "value": 11 }, { "name": "淄川区", "value": 4 },
+                                { "name": "博山区", "value": 3 }, { "name": "高新区", "value": 2 },
+                                { "name": "恒台县", "value": 2 }, { "name": "沂源县", "value": 1 },
+                                { "name": "临川区", "value": 1 }
                             ]
-                        };
-
-                        option && chart10.setOption(option);
+                        }]
+                    };
+    
+                    option && chart10.setOption(option);
                     </script>
                     <p style="font-size: 13px!important; color: #a0a3a4!important">数据来源： 58同城。</p>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="" style="background-color: #fff;">
-        <div class=" ">
-            <div class="word" style="color: #000">
-                <p> </p>
-            </div>
-        </div>
-
-        <div class="container" style="display: flex; justify-content: center; align-items: center;">
-            <div class="row resourse">
-                <div class="juzhong pt-10 pb-120">
-                    <!-- <span>图2：各区烧烤店平均转让成本（单位：元/m^2）</span> -->
-                    <div id="transfer_cost" style="width: 650px; height: 650px;border: 0 solid;"></div>
+                <div class="col-md-6 juzhong" style="padding-left:0px">
+                    <div id="transfer_cost" style="width: 100%;height: 700px;border: 0 solid;"></div>
                     <script type="text/javascript">
-                        // 初始化图表时设置style
-                        var chart11 = echarts.init(document.getElementById('transfer_cost'));
-                        // 指定图表的配置项和数据
-
-                        $.get('assets/data/transfer_cost.json', function (hotel) {
-                            $.get('assets/data/淄博市.json', function (zibo) {
-                                chart11.hideLoading();
-                                echarts.registerMap('zibo', zibo);
-                                var option = {
-                                    title: {
-                                        text: '图11：各区烧烤店平均转让成本（单位：元/每平方米）',
-                                        left: 'center',
-                                        top: 'top',
-                                        textStyle: {
-                                            fontSize: '24px',
-                                            fontWeight: 'bolder',
-                                            color: '#6d6b6c',
-                                            fontFamily: 'sans-serif'
+                    // 初始化图表时设置style
+                    var chart11 = echarts.init(document.getElementById('transfer_cost'));
+                    // 指定图表的配置项和数据
+    
+                    $.get('assets/data/transfer_cost.json', function(hotel) {
+                        $.get('assets/data/淄博市.json', function(zibo) {
+                            chart11.hideLoading();
+                            echarts.registerMap('zibo', zibo);
+                            var option = {
+                                title: {
+                                    text: '图11：各区烧烤店平均转让成本（单位：元/每平方米）',
+                                    left: 'center',
+                                    top: 'top',
+                                    textStyle: {
+                                        fontSize: '15px',
+                                        fontWeight: 'bolder',
+                                        color: '#6d6b6c',
+                                        fontFamily: 'sans-serif'
+                                    }
+                                },
+                                tooltip: {
+                                    trigger: 'item',
+                                    showDelay: 0,
+                                    transitionDuration: 0.2
+                                },
+                                visualMap: {
+                                    left: 'right',
+                                    min: 100,
+                                    max: 900,
+                                    inRange: {
+                                        color: [
+                                            '#313695',
+                                            //'#4575b4',
+                                            '#74add1',
+                                            //'#abd9e9',
+                                            '#e0f3f8',
+                                            //'#ffffbf',
+                                            '#fee090',
+                                            //'#fdae61',
+                                            '#f46d43',
+                                            //'#d73027',
+                                            '#a50026'
+                                        ]
+                                    },
+                                    text: ['High', 'Low'],
+                                    calculable: true
+                                },
+                                toolbox: {
+                                    show: false,
+                                    //orient: 'vertical',
+                                    left: 'left',
+                                    top: 'top',
+                                    feature: {
+                                        dataView: { readOnly: false },
+                                        restore: {},
+                                        saveAsImage: {}
+                                    }
+                                },
+                                series: [{
+                                    name: '淄博市烧烤店平均转让费用',
+                                    type: 'map',
+                                    roam: true,
+                                    map: 'zibo',
+                                    emphasis: {
+                                        label: {
+                                            show: true
                                         }
                                     },
-                                    tooltip: {
-                                        trigger: 'item',
-                                        showDelay: 0,
-                                        transitionDuration: 0.2
-                                    },
-                                    visualMap: {
-                                        left: 'right',
-                                        min: 100,
-                                        max: 900,
-                                        inRange: {
-                                            color: [
-                                                '#313695',
-                                                //'#4575b4',
-                                                '#74add1',
-                                                //'#abd9e9',
-                                                '#e0f3f8',
-                                                //'#ffffbf',
-                                                '#fee090',
-                                                //'#fdae61',
-                                                '#f46d43',
-                                                //'#d73027',
-                                                '#a50026'
-                                            ]
-                                        },
-                                        text: ['High', 'Low'],
-                                        calculable: true
-                                    },
-                                    toolbox: {
-                                        show: false,
-                                        //orient: 'vertical',
-                                        left: 'left',
-                                        top: 'top',
-                                        feature: {
-                                            dataView: { readOnly: false },
-                                            restore: {},
-                                            saveAsImage: {}
-                                        }
-                                    },
-                                    series: [
-                                        {
-                                            name: '淄博市烧烤店平均转让费用',
-                                            type: 'map',
-                                            roam: true,
-                                            map: 'zibo',
-                                            emphasis: {
-                                                label: {
-                                                    show: true
-                                                }
-                                            },
-                                            data: hotel
-                                        }
-                                    ]
-                                };
-                                chart11.setOption(option);
-                                chart11.resize();
-                            });
+                                    data: hotel
+                                }]
+                            };
+                            chart11.setOption(option);
+                            chart11.resize();
                         });
-
+                    });
                     </script>
-                    <p>数据来源： 58同城。</p>
+                    <!-- <p>数据来源： 58同城。</p> -->
                 </div>
+                <!-- 地图结束 -->
             </div>
         </div>
     </section>
@@ -461,7 +437,7 @@
             </div>
         </div>
     </div>
-    <div style="text-align: center; color: #999999; font-size: 12px;">滑动查看更多图片</div>
+    <div style="text-align: center; color: #999999; font-size: 12px;">左右滑动查看更多图片</div>
 
     <section>
         <div class="container">

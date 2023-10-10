@@ -668,7 +668,7 @@
                     <div id="search_index" style="width: 700px;height: 600px;border: 0 solid;"></div>
                     <script type="text/javascript">
                         var dom = document.getElementById('search_index');
-                        var chart15 = echarts.init(dom, null, {
+                        var chart14 = echarts.init(dom, null, {
                             renderer: 'canvas',
                             useDirtyRect: false
                         });
@@ -677,28 +677,27 @@
                         var option;
 
                         option = {
-                            title: {
-                                graphic: [{
-                                    id: 'text1',
-                                    type: 'text',
-                                    style: {
-                                        text: '淄博日均迁入指数随着\n淄博烧烤热度的涨高而增加',
-                                        x: 100,
-                                        y: 430
-                                    },
+                            graphic: [{
+                                id: 'text1',
+                                type: 'text',
+                                style: {
+                                    text: '淄博烧烤百度搜索指数\n开始飙升',
+                                    x: 150,
+                                    y: 490
                                 },
-                                {
-                                    type: 'circle',
-                                    shape: {
-                                        cx: 180,
-                                        cy: 460,
-                                        r: 8
-                                    },
-                                    style: {
-                                        fill: '#ffa900'
-                                    }
-                                },]
-                                ,
+                            },
+                            {
+                                type: 'circle',
+                                shape: {
+                                    cx: 230,
+                                    cy: 520,
+                                    r: 8
+                                },
+                                style: {
+                                    fill: '#ffa900'
+                                }
+                            },],
+                            title: {
                                 text: '图14：百度搜索指数',
                                 left: 'center',
                                 top: 'top',
@@ -714,7 +713,7 @@
                                 formatter: function (params) {
                                     // params是一个数组，每个元素是一个对象，包含了当前鼠标所在的数据点的信息
                                     // 你可以根据你的需求来自定义tooltip的内容和格式
-                                    // console.log(params);
+                                    console.log(params);
                                     var name = params[0].axisValue; // 获取日期
                                     var value = params[0].data; // 获取迁移指数
                                     var color = params[0].color; // 获取颜色
@@ -735,7 +734,7 @@
                                 },
                             },
                             grid: {
-                                left: '5%',
+                                left: '15%',
                                 right: '15%',
                                 bottom: '10%'
                             },
@@ -893,7 +892,19 @@
                                     '2023-07-28'
                                 ]
                             },
-                            yAxis: {},
+                            yAxis: {
+                                type: 'value',
+                                // splitLine: {
+                                //         show: false  // 不显示网格线
+                                //     }
+                                axisLabel: {
+                                    textStyle: {
+                                        color: 'black', // 字体颜色
+                                        fontSize: 16, // 字体大小
+                                        fontWeight: 'bold' // 字体粗细
+                                    }
+                                },
+                            },
                             toolbox: {
                                 right: 10,
                                 feature: {
@@ -1141,7 +1152,7 @@
                             }
                         };
 
-                        chart15.setOption(option);
+                        chart14.setOption(option);
                     </script>
                     <p>数据来源：http://index.baidu.com</p>
                 </div>
@@ -1171,16 +1182,7 @@
             </div>
         </div>
     </section>
-    <div class="container" style="display: flex;justify-content: center;align-items: center;">
-        <div class=" ">
-            <div
-                style="margin-left: 20px; display: flex; flex: 1 1 0%; flex-direction: row; overflow-x: auto; margin-top: 10px;">
-                <div>
-                    <img src="assets/images/曹县背景图.jpg" style=" width: 680px; height: 680px;">
-                </div>
-            </div>
-        </div>
-    </div>
+
     <section style="background-color: #242323;">
         <div class="container" style="margin-top: 50px;">
             <div class="col-lg-12 col-lg-6 word pt-60 pb-60">

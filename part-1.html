@@ -951,7 +951,7 @@
                                 left: 'center',
                                 top: 'top',
                                 textStyle: {
-                                    fontSize: '24px',
+                                    fontSize: '20px',
                                     fontWeight: 'bolder',
                                     color: '#6d6b6c',
                                     fontFamily: 'sans-serif'
@@ -1530,11 +1530,12 @@
                                 },
                                 axisPointer: {
                                     label: {
+                                        width: 190,
                                         formatter: function (params) {
                                             return (
-                                                params.value + '年烤店桌位需求数量  ' +
+                                                params.value + '年烤店桌位需求数量：' +
                                                 // params.value +
-                                                (params.seriesData.length ? '：' + params.seriesData[0].data : '')
+                                                params.seriesData[0].data + "桌"
                                             );
                                         }
                                     }
@@ -1554,10 +1555,11 @@
                                 },
                                 axisPointer: {
                                     label: {
+                                        width: 220,
                                         formatter: function (params) {
                                             return (
-                                                params.value + '年烧烤店用电量 ' +
-                                                (params.seriesData.length ? '：' + params.seriesData[0].data + "(千瓦时)" : '')
+                                                params.value + '年烧烤店用电量：' +
+                                                params.seriesData[0].data + "(千瓦时)"
                                             );
                                         }
                                     }
